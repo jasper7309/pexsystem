@@ -304,11 +304,11 @@ function Index() {
                 The Choice Is Simple
               </h2>
               <p className="mt-3 max-w-xl text-sm text-muted-foreground">
-                Keep guessing your way through the charts, or trade a system that has
-                already funded hundreds of traders.
+                Keep trading without a system, or learn the system that's gotten 300+
+                traders funded.
               </p>
             </div>
-            <GoldButton className="shrink-0">Join The Pex System</GoldButton>
+            <GoldButton className="shrink-0">Get The Pex System</GoldButton>
           </Card>
         </Section>
 
