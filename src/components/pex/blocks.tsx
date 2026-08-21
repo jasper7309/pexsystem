@@ -61,28 +61,45 @@ export function FeatureCard({
   );
 }
 
-export function TestimonialCard({ name, result }: { name: string; result: string }) {
+export function TestimonialCard({
+  name,
+  result,
+  src,
+  kind,
+}: {
+  name: string;
+  result: string;
+  src: string;
+  kind: "youtube" | "mp4";
+}) {
   return (
-    <Card className="p-3">
-      <MediaSlot label="Video testimonial" className="aspect-video w-full" />
+    <div className="overflow-hidden rounded-xl border border-border bg-surface-light p-3 shadow-card">
+      <InlineVideo src={src} kind={kind} />
       <div className="flex items-center gap-3 px-1 py-3">
-        <div className="size-9 rounded-full border border-border bg-muted" aria-hidden />
+        <div
+          className="size-9 rounded-full border border-border bg-muted"
+          aria-hidden
+        />
         <div>
-          <p className="text-sm font-semibold text-foreground">{name}</p>
-          <p className="text-xs text-muted-foreground">{result}</p>
+          <p className="text-sm font-semibold text-surface-light-foreground">{name}</p>
+          <p className="text-xs text-surface-light-foreground/70">{result}</p>
         </div>
       </div>
-    </Card>
+    </div>
   );
 }
 
-export function AvatarBubble({ name }: { name: string }) {
+export function AvatarBubble({ name, src }: { name: string; src: string }) {
   return (
-    <figure className="flex w-20 flex-col items-center gap-2">
-      <div
-        className="size-16 rounded-full border border-border bg-card shadow-card sm:size-20"
-        aria-hidden
-      />
+    <figure className="flex w-24 flex-col items-center gap-2">
+      <div className="flex size-20 items-center justify-center overflow-hidden rounded-full border border-border bg-letterbox shadow-card sm:size-24">
+        <img
+          src={src}
+          alt={name}
+          loading="lazy"
+          className="size-full object-contain"
+        />
+      </div>
       <figcaption className="text-xs text-muted-foreground">{name}</figcaption>
     </figure>
   );
