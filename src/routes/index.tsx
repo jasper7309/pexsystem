@@ -282,7 +282,7 @@ function Index() {
         <Section id="reviews">
           <SectionHeading
             title="See The Reviews"
-            subtitle="Payout screenshots and messages from inside the community."
+            subtitle="Real feedback from students who've gone through The Pex System."
           />
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
             {Array.from({ length: 12 }).map((_, i) => (
