@@ -243,10 +243,10 @@ function Index() {
                 Everything You Need To Get Funded, In One Place
               </h2>
               <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                No scattered YouTube playlists, no paid signal groups. One system, one
-                risk model and one community that trades it together.
+                The PEX strategy, the journal, live signals, and a like-minded private
+                student community.
               </p>
-              <GoldButton className="mt-6">Join The System</GoldButton>
+              <GoldButton className="mt-6">Join The Family</GoldButton>
             </div>
             <MediaSlot label="Trading workspace" className="aspect-[4/3] w-full" />
           </Card>
