@@ -76,8 +76,8 @@ export function MediaSlot({
   className,
   rounded = "rounded-xl",
 }: {
-  label?: string;
-  className?: string;
+  label?: string | undefined;
+  className?: string | undefined;
   rounded?: string;
 }) {
   return (
