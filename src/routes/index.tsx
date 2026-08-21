@@ -182,7 +182,7 @@ function Index() {
 
         {/* Success stories */}
         <Section>
-          <SectionHeading eyebrow="Real Results" title="Success Stories" />
+          <SectionHeading eyebrow="300+ Funded Students" title="Success Stories" />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {TESTIMONIALS.map((t) => (
               <TestimonialCard key={t.name} {...t} />
