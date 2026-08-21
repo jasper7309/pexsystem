@@ -226,7 +226,7 @@ function Index() {
         <Section glow="violet">
           <SectionHeading
             title="Trader Spotlight"
-            subtitle="Members of the community currently trading funded capital."
+            subtitle="Meet a few of our funded traders."
           />
           <div className="flex flex-wrap items-start justify-center gap-6">
             {SPOTLIGHT.map((name) => (
