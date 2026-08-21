@@ -316,35 +316,34 @@ function Index() {
         <Section id="pricing" glow="electric">
           <SectionHeading
             title="Choose Your Plan"
-            subtitle="Pick the access level that matches how fast you want to get funded."
+            subtitle="Each program gives access to the exact system designed to get you consistently profitable with propfirms."
           />
           <div className="mx-auto grid max-w-3xl gap-6 md:grid-cols-2">
             <PricingCard
               name="The Pex System"
               price="$149"
-              cadence="one-time"
-              blurb="Full strategy access, self-paced."
+              cadence="/month"
+              blurb="Learn the full strategy and get the tools to apply it."
               cta="Get Started"
               features={[
-                "The Pex System program",
-                "Risk management playbook",
-                "Prop firm challenge guide",
-                "Lifetime course updates",
+                "The Pex Strategy course",
+                "MTA Trading Journal access",
+                "Private Community access",
+                "VIP Signals",
               ]}
             />
             <PricingCard
-              name="Complete Funded Bundle"
+              name="Exclusive Mentorship"
               price="$249"
-              cadence="one-time"
-              blurb="Everything in The Pex System, plus live coaching."
-              cta="Get Funded Faster"
+              cadence="/month"
+              blurb="Everything in The Pex System, plus direct 1-on-1 mentorship from Pex."
+              cta="Get Started"
               featured
               features={[
                 "Everything in The Pex System",
-                "Private student community",
-                "Weekly live trading sessions",
-                "Payout & scaling support",
-                "Direct access to Q&A calls",
+                "2 Live Trading Sessions With Pex 1 Hour Each",
+                "Access to Pex Seven-Figure Scale-Up Plan",
+                "How to Get Private Investors",
               ]}
             />
           </div>
