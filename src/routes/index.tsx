@@ -10,7 +10,6 @@ import { Footer } from "@/components/pex/Footer";
 import {
   Card,
   GoldButton,
-  MediaSlot,
   OutlineButton,
   Section,
   SectionHeading,
@@ -20,8 +19,22 @@ import {
   FeatureCard,
   PricingCard,
   StepCard,
+  StepImage,
   TestimonialCard,
 } from "@/components/pex/blocks";
+import {
+  HeroVideo,
+  RandomSlideshow,
+  ReviewGrid,
+} from "@/components/pex/media";
+import {
+  FUNDED_COLLAGE,
+  PEX_SYSTEM_IMAGE,
+  REVIEW_IMAGES,
+  SPOTLIGHT_IMAGES,
+  TELEGRAM_IMAGE,
+  TESTIMONIAL_VIDEOS,
+} from "@/components/pex/content";
 import {
   BookOpen,
   Users,
