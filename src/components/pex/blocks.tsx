@@ -1,17 +1,18 @@
 import type { ReactNode } from "react";
-import { Card, MediaSlot } from "./primitives";
+import { Card } from "./primitives";
+import { InlineVideo } from "./media";
 import { cn } from "@/lib/utils";
 
 export function StepCard({
   step,
   title,
   body,
-  mediaLabel,
+  media,
 }: {
   step: string;
   title: string;
   body: string;
-  mediaLabel?: string;
+  media?: ReactNode;
 }) {
   return (
     <Card className="flex flex-col gap-5">
@@ -22,8 +23,21 @@ export function StepCard({
         <h3 className="mt-4 text-lg font-semibold text-foreground">{title}</h3>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
       </div>
-      <MediaSlot label={mediaLabel} className="mt-auto aspect-[4/3] w-full" />
+      {media ? <div className="mt-auto">{media}</div> : null}
     </Card>
+  );
+}
+
+export function StepImage({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-xl border border-border bg-letterbox">
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className="size-full object-contain"
+      />
+    </div>
   );
 }
 
