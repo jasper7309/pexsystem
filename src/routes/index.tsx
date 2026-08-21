@@ -160,14 +160,14 @@ function Index() {
         <Section glow="violet" className="pt-14 md:pt-20">
           <div className="mx-auto max-w-3xl text-center">
             <span className="inline-flex items-center rounded-full border border-gold/40 bg-gold/10 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
-              300+ funded traders and counting
+              With Over 300+ Funded Students
             </span>
             <h1 className="mt-6 text-4xl font-bold leading-[1.08] text-foreground sm:text-5xl md:text-6xl">
               Learn The Exact System That Got Over 300 Traders Funded
             </h1>
             <p className="mx-auto mt-5 max-w-2xl text-sm text-muted-foreground sm:text-base">
-              A repeatable forex strategy, a risk model that protects your account, and a
-              community that keeps you executing until you're trading real capital.
+              In 90 days you will learn the exact system required by propfirms, to pass,
+              get payouts and become consistently profitable as a funded trader.
             </p>
           </div>
           <MediaSlot
