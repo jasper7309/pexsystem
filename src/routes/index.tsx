@@ -210,7 +210,7 @@ function Index() {
         <Section id="included">
           <SectionHeading
             title="What's Included?"
-            subtitle="Everything you need to trade the system and pass a funded challenge."
+            subtitle="Everything you get in the PEX system + bonus products."
           />
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map((f) => (
