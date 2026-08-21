@@ -47,6 +47,9 @@
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
   --color-footer: var(--footer);
+  --color-surface-light: var(--surface-light);
+  --color-surface-light-foreground: var(--surface-light-foreground);
+  --color-letterbox: var(--letterbox);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
@@ -97,6 +100,10 @@
   --electric-glow: oklch(0.36 0.18 268);
   /* #050508 */
   --footer: oklch(0.093 0.009 275);
+  /* white media card surface + pure black letterboxing */
+  --surface-light: oklch(1 0 0);
+  --surface-light-foreground: oklch(0.2 0.02 280);
+  --letterbox: oklch(0 0 0);
   --sidebar: oklch(0.176 0.017 278);
   --sidebar-foreground: oklch(0.966 0.001 286);
   --sidebar-primary: oklch(0.781 0.155 74);
@@ -110,6 +117,10 @@
 @layer base {
   * {
     border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
   }
 
   body {

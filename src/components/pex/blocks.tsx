@@ -1,17 +1,18 @@
 import type { ReactNode } from "react";
-import { Card, MediaSlot } from "./primitives";
+import { Card } from "./primitives";
+import { InlineVideo } from "./media";
 import { cn } from "@/lib/utils";
 
 export function StepCard({
   step,
   title,
   body,
-  mediaLabel,
+  media,
 }: {
   step: string;
   title: string;
   body: string;
-  mediaLabel?: string;
+  media?: ReactNode;
 }) {
   return (
     <Card className="flex flex-col gap-5">
@@ -22,8 +23,21 @@ export function StepCard({
         <h3 className="mt-4 text-lg font-semibold text-foreground">{title}</h3>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
       </div>
-      <MediaSlot label={mediaLabel} className="mt-auto aspect-[4/3] w-full" />
+      {media ? <div className="mt-auto">{media}</div> : null}
     </Card>
+  );
+}
+
+export function StepImage({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-xl border border-border bg-letterbox">
+      <img
+        src={src}
+        alt={alt}
+        loading="lazy"
+        className="size-full object-contain"
+      />
+    </div>
   );
 }
 
@@ -47,28 +61,45 @@ export function FeatureCard({
   );
 }
 
-export function TestimonialCard({ name, result }: { name: string; result: string }) {
+export function TestimonialCard({
+  name,
+  result,
+  src,
+  kind,
+}: {
+  name: string;
+  result: string;
+  src: string;
+  kind: "youtube" | "mp4";
+}) {
   return (
-    <Card className="p-3">
-      <MediaSlot label="Video testimonial" className="aspect-video w-full" />
+    <div className="overflow-hidden rounded-xl border border-border bg-surface-light p-3 shadow-card">
+      <InlineVideo src={src} kind={kind} />
       <div className="flex items-center gap-3 px-1 py-3">
-        <div className="size-9 rounded-full border border-border bg-muted" aria-hidden />
+        <div
+          className="size-9 rounded-full border border-border bg-muted"
+          aria-hidden
+        />
         <div>
-          <p className="text-sm font-semibold text-foreground">{name}</p>
-          <p className="text-xs text-muted-foreground">{result}</p>
+          <p className="text-sm font-semibold text-surface-light-foreground">{name}</p>
+          <p className="text-xs text-surface-light-foreground/70">{result}</p>
         </div>
       </div>
-    </Card>
+    </div>
   );
 }
 
-export function AvatarBubble({ name }: { name: string }) {
+export function AvatarBubble({ name, src }: { name: string; src: string }) {
   return (
-    <figure className="flex w-20 flex-col items-center gap-2">
-      <div
-        className="size-16 rounded-full border border-border bg-card shadow-card sm:size-20"
-        aria-hidden
-      />
+    <figure className="flex w-24 flex-col items-center gap-2">
+      <div className="flex size-20 items-center justify-center overflow-hidden rounded-full border border-border bg-letterbox shadow-card sm:size-24">
+        <img
+          src={src}
+          alt={name}
+          loading="lazy"
+          className="size-full object-contain"
+        />
+      </div>
       <figcaption className="text-xs text-muted-foreground">{name}</figcaption>
     </figure>
   );
@@ -82,6 +113,7 @@ export function PricingCard({
   features,
   featured = false,
   cta,
+  ctaHref = "#checkout",
 }: {
   name: string;
   price: string;
@@ -90,6 +122,8 @@ export function PricingCard({
   features: string[];
   featured?: boolean;
   cta: string;
+  /** Pricing CTAs go to signup/checkout, not the pricing anchor. */
+  ctaHref?: string;
 }) {
   return (
     <Card
@@ -112,7 +146,7 @@ export function PricingCard({
       </p>
       <p className="mt-2 text-sm text-muted-foreground">{blurb}</p>
       <a
-        href="#pricing"
+        href={ctaHref}
         className={cn(
           "mt-6 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-transform hover:scale-[1.02]",
           featured

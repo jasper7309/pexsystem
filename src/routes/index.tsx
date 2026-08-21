@@ -10,7 +10,6 @@ import { Footer } from "@/components/pex/Footer";
 import {
   Card,
   GoldButton,
-  MediaSlot,
   OutlineButton,
   Section,
   SectionHeading,
@@ -20,8 +19,22 @@ import {
   FeatureCard,
   PricingCard,
   StepCard,
+  StepImage,
   TestimonialCard,
 } from "@/components/pex/blocks";
+import {
+  HeroVideo,
+  RandomSlideshow,
+  ReviewGrid,
+} from "@/components/pex/media";
+import {
+  FUNDED_COLLAGE,
+  PEX_SYSTEM_IMAGE,
+  REVIEW_IMAGES,
+  SPOTLIGHT_IMAGES,
+  TELEGRAM_IMAGE,
+  TESTIMONIAL_VIDEOS,
+} from "@/components/pex/content";
 import {
   BookOpen,
   Users,
@@ -58,19 +71,25 @@ const STEPS = [
     step: "1",
     title: "Get The Pex System",
     body: "Learn the framework behind passing a prop firm, getting a payout, and becoming consistently profitable.",
-    mediaLabel: "Course preview",
+    media: <StepImage src={PEX_SYSTEM_IMAGE} alt="The Pex System program" />,
   },
   {
     step: "2",
     title: "Join The Student Private Community",
     body: "Get access to like minded traders as yourself, who is ready to learn and get consistently profitable.",
-    mediaLabel: "Community preview",
+    media: <StepImage src={TELEGRAM_IMAGE} alt="Private student community on Telegram" />,
   },
   {
     step: "3",
     title: "Get Funded In 90 Days",
     body: "This program is designed to get you funded in 90 days.",
-    mediaLabel: "Payout certificate",
+    media: (
+      <RandomSlideshow
+        images={FUNDED_COLLAGE}
+        alt="Funded student payout"
+        className="aspect-[4/3] w-full"
+      />
+    ),
   },
 ];
 
@@ -107,13 +126,15 @@ const FEATURES = [
   },
 ];
 
-const TESTIMONIALS = [
-  { name: "Funded Student 1", result: "@student_handle" },
-  { name: "Funded Student 2", result: "@student_handle" },
-  { name: "Funded Student 3", result: "@student_handle" },
-];
+const TESTIMONIALS = TESTIMONIAL_VIDEOS.map((video, i) => ({
+  name: `Funded Student ${i + 1}`,
+  result: "@student_handle",
+  ...video,
+}));
 
-const SPOTLIGHT = ["Tobi", "Amara", "Sam", "Zainab", "Chidi", "Lola"];
+const SPOTLIGHT = ["Tobi", "Amara", "Sam", "Zainab", "Chidi", "Lola"].map(
+  (name, i) => ({ name, src: SPOTLIGHT_IMAGES[i]! }),
+);
 
 const FAQ = [
   {
@@ -170,13 +191,10 @@ function Index() {
               get payouts and become consistently profitable as a funded trader.
             </p>
           </div>
-          <MediaSlot
-            label="Intro video"
-            className="mx-auto mt-10 aspect-video w-full max-w-3xl"
-          />
+          <HeroVideo className="mx-auto mt-10 max-w-3xl" />
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <GoldButton>Get The Pex System</GoldButton>
-            <OutlineButton>See How It Works</OutlineButton>
+            <OutlineButton href="#pricing">See How It Works</OutlineButton>
           </div>
         </Section>
 
@@ -229,8 +247,8 @@ function Index() {
             subtitle="Meet a few of our funded traders."
           />
           <div className="flex flex-wrap items-start justify-center gap-6">
-            {SPOTLIGHT.map((name) => (
-              <AvatarBubble key={name} name={name} />
+            {SPOTLIGHT.map((person) => (
+              <AvatarBubble key={person.name} {...person} />
             ))}
           </div>
         </Section>
@@ -248,7 +266,12 @@ function Index() {
               </p>
               <GoldButton className="mt-6">Join The Family</GoldButton>
             </div>
-            <MediaSlot label="Trading workspace" className="aspect-[4/3] w-full" />
+            <img
+              src={PEX_SYSTEM_IMAGE}
+              alt="Everything included in The Pex System"
+              loading="lazy"
+              className="w-full"
+            />
           </Card>
         </Section>
 
@@ -284,16 +307,7 @@ function Index() {
             title="See The Reviews"
             subtitle="Real feedback from students who've gone through The Pex System."
           />
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            {Array.from({ length: 12 }).map((_, i) => (
-              <MediaSlot
-                key={i}
-                label="Review"
-                rounded="rounded-lg"
-                className="aspect-[3/4] w-full"
-              />
-            ))}
-          </div>
+          <ReviewGrid images={REVIEW_IMAGES} />
         </Section>
 
         {/* CTA banner */}
