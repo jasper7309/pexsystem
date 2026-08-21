@@ -194,7 +194,7 @@ function Index() {
         <Section id="how-it-works" glow="electric">
           <SectionHeading
             title="Here's How It Works"
-            subtitle="Three steps from where you are now to a funded trading account."
+            subtitle="From learning the strategy to getting funded, here's the path."
           />
           <div className="grid gap-6 md:grid-cols-3">
             {STEPS.map((s) => (
@@ -202,7 +202,7 @@ function Index() {
             ))}
           </div>
           <div className="mt-10 text-center">
-            <GoldButton>Start Step One Today</GoldButton>
+            <GoldButton>Start Learning The System</GoldButton>
           </div>
         </Section>
 
