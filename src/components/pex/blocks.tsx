@@ -113,6 +113,7 @@ export function PricingCard({
   features,
   featured = false,
   cta,
+  ctaHref = "#checkout",
 }: {
   name: string;
   price: string;
@@ -121,6 +122,8 @@ export function PricingCard({
   features: string[];
   featured?: boolean;
   cta: string;
+  /** Pricing CTAs go to signup/checkout, not the pricing anchor. */
+  ctaHref?: string;
 }) {
   return (
     <Card
@@ -143,7 +146,7 @@ export function PricingCard({
       </p>
       <p className="mt-2 text-sm text-muted-foreground">{blurb}</p>
       <a
-        href="#pricing"
+        href={ctaHref}
         className={cn(
           "mt-6 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-transform hover:scale-[1.02]",
           featured
