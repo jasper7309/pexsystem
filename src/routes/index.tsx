@@ -57,19 +57,19 @@ const STEPS = [
   {
     step: "1",
     title: "Get The Pex System",
-    body: "Unlock the full strategy: entries, exits, risk model and the exact rules used to pass funded challenges.",
+    body: "Learn the framework behind passing a prop firm, getting a payout, and becoming consistently profitable.",
     mediaLabel: "Course preview",
   },
   {
     step: "2",
-    title: "Join The Trader Community",
-    body: "Get plugged into the private community where setups, reviews and daily accountability happen.",
+    title: "Join The Student Private Community",
+    body: "Get access to like minded traders as yourself, who is ready to learn and get consistently profitable.",
     mediaLabel: "Community preview",
   },
   {
     step: "3",
     title: "Get Funded In 90 Days",
-    body: "Apply the system to a prop-firm challenge, pass evaluation and start trading real capital.",
+    body: "This program is designed to get you funded in 90 days.",
     mediaLabel: "Payout certificate",
   },
 ];
@@ -78,80 +78,78 @@ const FEATURES = [
   {
     icon: <BookOpen className="size-4" />,
     title: "The Pex System Program",
-    body: "The complete step-by-step curriculum, from market structure to execution.",
+    body: "The complete, step-by-step trading program.",
   },
   {
     icon: <Users className="size-4" />,
     title: "Private Student Community",
-    body: "A room full of traders working the same plan every session.",
+    body: "A community of like-minded traders.",
   },
   {
     icon: <Video className="size-4" />,
     title: "Live Trading Sessions",
-    body: "Watch the system traded live in real market conditions each week.",
-  },
-  {
-    icon: <ShieldCheck className="size-4" />,
-    title: "Risk Management Playbook",
-    body: "The exact risk rules that keep funded accounts alive.",
-  },
-  {
-    icon: <LineChart className="size-4" />,
-    title: "Prop Firm Challenge Guide",
-    body: "Firm selection, challenge rules and the pass-first checklist.",
+    body: "Real-time live trading with pex.",
   },
   {
     icon: <Trophy className="size-4" />,
-    title: "Payout & Scaling Support",
-    body: "Guidance on withdrawals and scaling once you're funded.",
+    title: "PEX Seven Figure Scaling Plan",
+    body: "Access to pex scaling plan.",
+  },
+  {
+    icon: <LineChart className="size-4" />,
+    title: "MTA Trading Journal",
+    body: "Track, review, and improve every trade you take.",
+  },
+  {
+    icon: <ShieldCheck className="size-4" />,
+    title: "Free 1-month VIP Signal",
+    body: "Access to free VIP signals.",
   },
 ];
 
 const TESTIMONIALS = [
-  { name: "Daniel A.", result: "Funded $100K account" },
-  { name: "Grace O.", result: "First payout in 6 weeks" },
-  { name: "Kelvin M.", result: "Passed phase 2 in 21 days" },
+  { name: "Funded Student 1", result: "@student_handle" },
+  { name: "Funded Student 2", result: "@student_handle" },
+  { name: "Funded Student 3", result: "@student_handle" },
 ];
 
-const SPOTLIGHT = [
-  "Tobi",
-  "Amara",
-  "Sam",
-  "Zainab",
-  "Chidi",
-  "Lola",
-];
+const SPOTLIGHT = ["Tobi", "Amara", "Sam", "Zainab", "Chidi", "Lola"];
 
 const FAQ = [
   {
     q: "What is The Pex System?",
-    a: "A complete forex trading program: the strategy, the risk framework and the prop-firm roadmap used to get over 300 traders funded.",
+    a: "",
   },
   {
-    q: "Who is this program for?",
-    a: "Traders who want a repeatable system instead of random signals — from serious beginners to traders stuck failing challenges.",
+    q: "Who is The Pex System for?",
+    a: "The PEX system is designed for struggling traders who find it difficult to pass evaluations and receive consistent payouts from prop firms.",
   },
   {
-    q: "Do I need prior trading experience?",
-    a: "No. The program starts from the fundamentals and builds up to full execution.",
+    q: "Do I need prior trading experience to join?",
+    a: "No, the PEX system includes everything you need to know.",
   },
   {
-    q: "How much capital do I need to start?",
-    a: "You can start on a demo account, then use a prop-firm challenge instead of risking large personal capital.",
+    q: "What is the MTA Trading Journal?",
+    a: "The MTA trading journal is a tool that helps you track, review, and improve your trading decisions.",
   },
   {
-    q: "How long until I get funded?",
-    a: "Most students who follow the plan target a funded account within 90 days. Results depend on your discipline.",
+    q: "How do VIP Signals work?",
+    a: "It's simple! We provide you with the trade at the right time; you just need to execute it.",
   },
   {
-    q: "Is there ongoing support after I join?",
-    a: "Yes — the private community and live sessions run continuously for members.",
+    q: "Will this help me pass a funding challenge?",
+    a: "Yes, that is the goal of the PEX system.",
   },
   {
-    q: "What if the system isn't for me?",
-    a: "Reach out to support and we'll walk you through your options before your next billing cycle.",
+    q: "What's included in the private community?",
+    a: "Our community consists of like-minded traders working together to achieve a common trading goal: profitability and consistent payouts.",
+  },
+  {
+    q: "How is the Exclusive Mentorship different from The Pex System plan?",
+    a: "The exclusive mentorship offers you direct access to one-on-one live trading, classes, and Q&A sessions with PEX himself, while the PEX system plan is a broader form of mentorship that is not as exclusive as the private mentorship.",
   },
 ];
+
 
 function Index() {
   return (
