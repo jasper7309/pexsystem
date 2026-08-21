@@ -256,7 +256,7 @@ function Index() {
         <Section id="faq" glow="electric">
           <SectionHeading
             title="Your Questions, Answered"
-            subtitle="Everything traders ask before joining The Pex System."
+            subtitle="Everything you need to know about The Pex System."
           />
           <div className="mx-auto max-w-3xl">
             <Accordion type="single" collapsible className="space-y-3">
