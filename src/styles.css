@@ -47,6 +47,9 @@
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
   --color-footer: var(--footer);
+  --color-surface-light: var(--surface-light);
+  --color-surface-light-foreground: var(--surface-light-foreground);
+  --color-letterbox: var(--letterbox);
   --color-sidebar: var(--sidebar);
   --color-sidebar-foreground: var(--sidebar-foreground);
   --color-sidebar-primary: var(--sidebar-primary);
