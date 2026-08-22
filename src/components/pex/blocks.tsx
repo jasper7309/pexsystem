@@ -154,17 +154,15 @@ export function PricingCard({
         <span className="pb-1 text-sm text-muted-foreground">{cadence}</span>
       </p>
       <p className="mt-2 text-sm text-muted-foreground">{blurb}</p>
-      <a
-        href={ctaHref}
-        className={cn(
-          "mt-6 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-transform hover:scale-[1.02]",
-          featured
-            ? "bg-gold text-gold-foreground shadow-gold"
-            : "border border-foreground/40 text-foreground hover:bg-accent",
-        )}
-      >
-        {cta}
-      </a>
+      {onCtaClick ? (
+        <button type="button" onClick={onCtaClick} className={ctaClass}>
+          {cta}
+        </button>
+      ) : (
+        <a href={ctaHref} className={ctaClass}>
+          {cta}
+        </a>
+      )}
       <ul className="mt-6 space-y-3">
         {features.map((f) => (
           <li key={f} className="flex gap-3 text-sm text-muted-foreground">
