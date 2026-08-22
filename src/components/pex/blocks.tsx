@@ -114,6 +114,7 @@ export function PricingCard({
   featured = false,
   cta,
   ctaHref = "#checkout",
+  onCtaClick,
 }: {
   name: string;
   price: string;
