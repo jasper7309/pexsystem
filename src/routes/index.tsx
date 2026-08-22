@@ -382,6 +382,16 @@ function Index() {
         </Section>
       </main>
       <Footer />
+      {plan && step === "method" ? (
+        <PaymentMethodModal
+          plan={plan}
+          onClose={closePayment}
+          onCrypto={() => setStep("crypto")}
+        />
+      ) : null}
+      {plan && step === "crypto" ? (
+        <CryptoPaymentModal plan={plan} onClose={closePayment} />
+      ) : null}
     </div>
   );
 }
