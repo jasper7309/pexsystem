@@ -180,6 +180,15 @@ const FAQ = [
 
 
 function Index() {
+  const [plan, setPlan] = useState<Plan | null>(null);
+  const [step, setStep] = useState<"method" | "crypto" | null>(null);
+
+  const openPayment = (p: Plan) => {
+    setPlan(p);
+    setStep("method");
+  };
+  const closePayment = () => setStep(null);
+
   return (
     <div id="top" className="min-h-screen bg-background">
       <Header />
