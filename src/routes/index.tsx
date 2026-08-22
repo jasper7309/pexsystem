@@ -390,7 +390,11 @@ function Index() {
         />
       ) : null}
       {plan && step === "crypto" ? (
-        <CryptoPaymentModal plan={plan} onClose={closePayment} />
+        <CryptoPaymentModal
+          plan={plan}
+          onClose={closePayment}
+          onBack={() => setStep("method")}
+        />
       ) : null}
     </div>
   );
