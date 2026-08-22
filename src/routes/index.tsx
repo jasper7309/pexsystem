@@ -355,6 +355,7 @@ function Index() {
               cadence="/month"
               blurb="Learn the full strategy and get the tools to apply it."
               cta="Get Started"
+              onCtaClick={() => openPayment(PRICING_PLANS[0]!)}
               features={[
                 "The Pex Strategy course",
                 "MTA Trading Journal access",
