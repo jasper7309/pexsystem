@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Accordion,
@@ -35,6 +36,12 @@ import {
   TELEGRAM_IMAGE,
   TESTIMONIAL_VIDEOS,
 } from "@/components/pex/content";
+import {
+  CryptoPaymentModal,
+  PaymentMethodModal,
+  PRICING_PLANS,
+  type Plan,
+} from "@/components/pex/PaymentModal";
 import {
   BookOpen,
   Users,
