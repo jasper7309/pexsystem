@@ -125,7 +125,15 @@ export function PricingCard({
   cta: string;
   /** Pricing CTAs go to signup/checkout, not the pricing anchor. */
   ctaHref?: string;
+  /** When provided, the CTA opens the payment flow instead of navigating. */
+  onCtaClick?: () => void;
 }) {
+  const ctaClass = cn(
+    "mt-6 inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-transform hover:scale-[1.02]",
+    featured
+      ? "bg-gold text-gold-foreground shadow-gold"
+      : "border border-foreground/40 text-foreground hover:bg-accent",
+  );
   return (
     <Card
       className={cn(
