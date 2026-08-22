@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import {
   Accordion,
@@ -35,6 +36,12 @@ import {
   TELEGRAM_IMAGE,
   TESTIMONIAL_VIDEOS,
 } from "@/components/pex/content";
+import {
+  CryptoPaymentModal,
+  PaymentMethodModal,
+  PRICING_PLANS,
+  type Plan,
+} from "@/components/pex/PaymentModal";
 import {
   BookOpen,
   Users,
@@ -173,6 +180,15 @@ const FAQ = [
 
 
 function Index() {
+  const [plan, setPlan] = useState<Plan | null>(null);
+  const [step, setStep] = useState<"method" | "crypto" | null>(null);
+
+  const openPayment = (p: Plan) => {
+    setPlan(p);
+    setStep("method");
+  };
+  const closePayment = () => setStep(null);
+
   return (
     <div id="top" className="min-h-screen bg-background">
       <Header />
@@ -339,6 +355,7 @@ function Index() {
               cadence="/month"
               blurb="Learn the full strategy and get the tools to apply it."
               cta="Get Started"
+              onCtaClick={() => openPayment(PRICING_PLANS[0]!)}
               features={[
                 "The Pex Strategy course",
                 "MTA Trading Journal access",
@@ -352,6 +369,7 @@ function Index() {
               cadence="/month"
               blurb="Everything in The Pex System, plus direct 1-on-1 mentorship from Pex."
               cta="Get Started"
+              onCtaClick={() => openPayment(PRICING_PLANS[1]!)}
               featured
               features={[
                 "Everything in The Pex System",
@@ -364,6 +382,16 @@ function Index() {
         </Section>
       </main>
       <Footer />
+      {plan && step === "method" ? (
+        <PaymentMethodModal
+          plan={plan}
+          onClose={closePayment}
+          onCrypto={() => setStep("crypto")}
+        />
+      ) : null}
+      {plan && step === "crypto" ? (
+        <CryptoPaymentModal plan={plan} onClose={closePayment} />
+      ) : null}
     </div>
   );
 }
