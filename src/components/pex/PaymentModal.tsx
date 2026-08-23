@@ -172,16 +172,31 @@ function CoinToggle({ coin, onChange }: { coin: Coin; onChange: (c: Coin) => voi
   );
 }
 
+function fallbackCopy(text: string) {
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.setAttribute("readonly", "");
+  ta.style.position = "fixed";
+  ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.select();
+  try {
+    document.execCommand("copy");
+  } finally {
+    document.body.removeChild(ta);
+  }
+}
+
 function CopyAddress({ address }: { address: string }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
     try {
       await navigator.clipboard.writeText(address);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
     } catch {
-      // Fallback: silently ignore if clipboard is unavailable.
+      fallbackCopy(address);
     }
   };
 
