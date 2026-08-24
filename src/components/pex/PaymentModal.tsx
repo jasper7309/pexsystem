@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { ArrowLeft, Check, Copy, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SkeletonImage } from "./media";
 
 export type Plan = {
   name: string;
@@ -58,14 +59,14 @@ function ModalShell({
         onClick={onClose}
         className="absolute inset-0 bg-background/80 backdrop-blur-sm"
       />
-      <div className="glow-violet relative w-full max-w-md overflow-hidden rounded-2xl border border-border bg-card p-7 shadow-card">
+      <div className="glow-violet relative w-full max-w-md overflow-hidden rounded-xl border border-border bg-card p-6 shadow-card animate-in fade-in zoom-in-95 duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-gold">
+            <p className="type-meta uppercase tracking-[0.22em] text-gold">
               {title}
             </p>
-            <h2 className="mt-3 text-xl font-bold text-foreground">
-              {plan.name} — {plan.price}
+            <h2 className="type-h2 mt-2 text-foreground">
+              {plan.name}, {plan.price}
               {plan.cadence}
             </h2>
           </div>
@@ -97,11 +98,12 @@ export function PaymentMethodModal({
   onCrypto: () => void;
 }) {
   const btn =
-    "flex w-full items-center justify-center rounded-full px-6 py-4 text-sm font-semibold transition-transform hover:scale-[1.02]";
+    "flex w-full items-center justify-center rounded-full px-6 py-4 text-[15px] font-semibold";
   return (
     <ModalShell plan={plan} onClose={onClose} title="Choose payment method">
-      <p className="mt-2 text-sm text-muted-foreground">
-        Select how you'd like to pay to get instant access.
+      <p className="type-body mt-2 text-muted-foreground">
+        Pick how you want to pay and your Pex System access is set up right after
+        payment clears.
       </p>
       <div className="mt-6 space-y-3">
         <a
@@ -109,7 +111,7 @@ export function PaymentMethodModal({
           target="_blank"
           rel="noopener noreferrer"
           onClick={onClose}
-          className={cn(btn, "bg-gold text-gold-foreground shadow-gold")}
+          className={cn(btn, "btn-press bg-gold text-gold-foreground")}
         >
           Pay with Card / Bank Transfer
         </a>
@@ -118,7 +120,7 @@ export function PaymentMethodModal({
           onClick={onCrypto}
           className={cn(
             btn,
-            "border border-foreground/40 text-foreground hover:bg-accent",
+            "btn-press-light border border-foreground/40 text-foreground",
           )}
         >
           Pay with Crypto
@@ -159,7 +161,7 @@ function CoinToggle({ coin, onChange }: { coin: Coin; onChange: (c: Coin) => voi
           onClick={() => onChange(c)}
           aria-pressed={coin === c}
           className={cn(
-            "rounded-full px-3 py-1 text-xs font-semibold transition-colors",
+            "type-meta rounded-full px-3 py-1 transition-colors duration-[180ms] ease-[cubic-bezier(0.4,0,0.2,1)]",
             coin === c
               ? "bg-gold text-gold-foreground"
               : "text-muted-foreground hover:text-foreground",
@@ -204,7 +206,7 @@ function CopyAddress({ address }: { address: string }) {
     <button
       type="button"
       onClick={handleCopy}
-      className="inline-flex items-center gap-1.5 rounded-full border border-border bg-accent/60 px-3 py-1.5 text-xs font-semibold text-foreground transition-colors hover:bg-accent"
+      className="inline-flex items-center gap-1.5 rounded-full border border-border bg-accent/60 px-3 py-1.5 type-meta text-foreground transition-colors duration-[180ms] ease-[cubic-bezier(0.4,0,0.2,1)] hover:bg-accent"
     >
       {copied ? (
         <>
@@ -243,41 +245,44 @@ export function CryptoPaymentModal({
       <div className="mt-6 space-y-5">
         <div className="grid grid-cols-2 gap-3">
           <div className="rounded-xl border border-border bg-accent/40 p-3">
-            <p className="text-xs text-muted-foreground">Price</p>
-            <p className="mt-1 text-lg font-bold text-foreground">
+            <p className="type-meta text-muted-foreground">Price</p>
+            <p className="type-h3 mt-1 text-foreground">
               {plan.price}
               {plan.cadence}
             </p>
           </div>
           <div className="rounded-xl border border-border bg-accent/40 p-3">
-            <p className="text-xs text-muted-foreground">Coin</p>
-            <p className="mt-1 text-lg font-bold text-foreground">{details.coin}</p>
+            <p className="type-meta text-muted-foreground">Coin</p>
+            <p className="type-h3 mt-1 text-foreground">{details.coin}</p>
           </div>
           {details.network ? (
             <div className="col-span-2 rounded-xl border border-border bg-accent/40 p-3">
-              <p className="text-xs text-muted-foreground">Network</p>
-              <p className="mt-1 text-base font-semibold text-foreground">{details.network}</p>
+              <p className="type-meta text-muted-foreground">Network</p>
+              <p className="type-h3 mt-1 text-foreground">{details.network}</p>
             </div>
           ) : null}
         </div>
 
         <div className="rounded-xl border border-border bg-accent/40 p-4">
-          <p className="text-xs text-muted-foreground">Wallet address</p>
+          <p className="type-meta text-muted-foreground">Wallet address</p>
           <div className="mt-2 flex items-center justify-between gap-3">
-            <p className="break-all text-sm font-medium text-foreground">{details.address}</p>
+            <p className="type-meta break-all text-foreground">{details.address}</p>
             <CopyAddress address={details.address} />
           </div>
         </div>
 
         <div className="mx-auto aspect-square w-full max-w-[220px] overflow-hidden rounded-xl bg-surface-light p-3 shadow-card">
-          <img
+          <SkeletonImage
+            key={details.qr}
             src={details.qr}
             alt={`${details.coin} payment QR code`}
-            className="size-full object-contain"
+            eager
+            className="size-full rounded-xl"
+            imgClassName="object-contain"
           />
         </div>
 
-        <p className="text-center text-xs leading-relaxed text-muted-foreground">
+        <p className="type-meta text-center text-muted-foreground">
           After sending payment, please send your receipt to our WhatsApp number:{" "}
           <a
             href="https://wa.me/2348151719335"
@@ -293,7 +298,7 @@ export function CryptoPaymentModal({
           href="https://wa.me/2348151719335"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex w-full items-center justify-center gap-2 rounded-full bg-gold px-6 py-3.5 text-sm font-semibold text-gold-foreground shadow-gold transition-transform hover:scale-[1.02]"
+          className="flex w-full items-center justify-center gap-2 btn-press rounded-full bg-gold px-6 py-3.5 text-[15px] font-semibold text-gold-foreground"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -311,7 +316,7 @@ export function CryptoPaymentModal({
         <button
           type="button"
           onClick={onBack}
-          className="flex w-full items-center justify-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-accent"
+          className="flex w-full items-center justify-center gap-2 btn-press-light rounded-full border border-border px-6 py-3 text-[15px] font-semibold text-foreground"
         >
           <ArrowLeft className="size-4" />
           Back to payment methods
