@@ -25,7 +25,7 @@ export function Header() {
         </nav>
         <a
           href="#pricing"
-          className="inline-flex items-center justify-center rounded-full bg-brand-blue px-5 py-2 text-sm font-semibold text-brand-blue-foreground transition-transform hover:scale-[1.03]"
+          className="inline-flex items-center justify-center rounded-full btn-press bg-brand-blue px-5 py-2 text-[15px] font-semibold text-brand-blue-foreground"
         >
           Join Now
         </a>

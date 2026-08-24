@@ -36,7 +36,7 @@ export function InlineVideo({
   return (
     <div
       className={cn(
-        "relative aspect-video w-full overflow-hidden rounded-lg bg-black",
+        "relative aspect-video w-full overflow-hidden rounded-xl bg-letterbox",
         className,
       )}
     >
@@ -56,9 +56,42 @@ export function InlineVideo({
           controls
           playsInline
           preload="metadata"
-          className="absolute left-0 top-0 size-full bg-black object-contain"
+          className="absolute left-0 top-0 size-full bg-letterbox object-contain"
         />
       )}
+    </div>
+  );
+}
+
+/** Image that reserves its box with a skeleton until loaded. */
+export function SkeletonImage({
+  src,
+  alt,
+  className,
+  imgClassName,
+  eager = false,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+  imgClassName?: string;
+  eager?: boolean;
+}) {
+  const [loaded, setLoaded] = useState(false);
+  return (
+    <div className={cn("relative overflow-hidden", className)}>
+      {!loaded ? <div className="skeleton absolute inset-0" aria-hidden /> : null}
+      <img
+        src={src}
+        alt={alt}
+        loading={eager ? "eager" : "lazy"}
+        onLoad={() => setLoaded(true)}
+        className={cn(
+          "size-full transition-opacity duration-200 ease-[cubic-bezier(0.4,0,0.2,1)]",
+          loaded ? "opacity-100" : "opacity-0",
+          imgClassName,
+        )}
+      />
     </div>
   );
 }
@@ -94,7 +127,7 @@ export function RandomSlideshow({
   return (
     <div
       className={cn(
-        "relative overflow-hidden rounded-xl border border-border bg-black",
+        "relative overflow-hidden rounded-xl border border-border bg-letterbox",
         className,
       )}
     >
@@ -103,9 +136,9 @@ export function RandomSlideshow({
           key={src}
           src={src}
           alt={alt}
-          loading="lazy"
+          loading={i === 0 ? "eager" : "lazy"}
           className={cn(
-            "absolute inset-0 size-full object-cover transition-opacity duration-700",
+            "absolute inset-0 size-full object-cover transition-opacity duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]",
             i === index ? "opacity-100" : "opacity-0",
           )}
         />
@@ -114,7 +147,7 @@ export function RandomSlideshow({
   );
 }
 
-/** Reviews grid with lightbox. */
+/** Reviews grid with lightbox. Fixed-ratio cells so nothing shifts as images load. */
 export function ReviewGrid({ images }: { images: string[] }) {
   const [active, setActive] = useState<string | null>(null);
 
@@ -129,20 +162,20 @@ export function ReviewGrid({ images }: { images: string[] }) {
 
   return (
     <>
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+      <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
         {images.map((src, i) => (
           <button
             key={src}
             type="button"
             onClick={() => setActive(src)}
-            className="group overflow-hidden rounded-xl border border-border bg-card shadow-card transition-transform hover:scale-[1.03] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            className="card-lift overflow-hidden rounded-xl border border-border bg-card shadow-card focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
             aria-label={`Open student review ${i + 1}`}
           >
-            <img
+            <SkeletonImage
               src={src}
-              alt={`Student review screenshot ${i + 1}`}
-              loading="lazy"
-              className="aspect-[3/4] w-full object-cover"
+              alt={`Pex System student review ${i + 1}`}
+              className="aspect-[3/4] w-full"
+              imgClassName="object-cover"
             />
           </button>
         ))}
@@ -158,14 +191,14 @@ export function ReviewGrid({ images }: { images: string[] }) {
         >
           <img
             src={active}
-            alt="Student review screenshot, full size"
-            className="max-h-[90vh] max-w-full rounded-xl object-contain shadow-card"
+            alt="Pex System student review, full size"
+            className="max-h-[90vh] max-w-full rounded-xl object-contain"
           />
           <button
             type="button"
             onClick={() => setActive(null)}
             aria-label="Close"
-            className="absolute right-5 top-5 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground"
+            className="btn-press-light absolute right-6 top-6 rounded-full border border-border bg-card px-4 py-2 text-[15px] font-semibold text-foreground"
           >
             Close
           </button>

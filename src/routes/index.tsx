@@ -54,13 +54,13 @@ import {
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "The Pex System — Get Funded As A Forex Trader" },
+      { title: "The Pex System: Get Funded As A Forex Trader" },
       {
         name: "description",
         content:
-          "The exact forex system that got over 300 traders funded. Strategy, prop-firm playbook and a live trader community — join The Pex System.",
+          "The exact forex system that got over 300 traders funded. Learn the PEX strategy, pass prop firm evaluations and collect consistent payouts.",
       },
-      { property: "og:title", content: "The Pex System — Get Funded As A Forex Trader" },
+      { property: "og:title", content: "The Pex System: Get Funded As A Forex Trader" },
       {
         property: "og:description",
         content:
@@ -102,32 +102,32 @@ const STEPS = [
 
 const FEATURES = [
   {
-    icon: <BookOpen className="size-4" />,
+    icon: <BookOpen className="size-5" />,
     title: "The Pex System Program",
     body: "The complete, step-by-step trading program.",
   },
   {
-    icon: <Users className="size-4" />,
+    icon: <Users className="size-5" />,
     title: "Private Student Community",
     body: "A community of like-minded traders.",
   },
   {
-    icon: <Video className="size-4" />,
+    icon: <Video className="size-5" />,
     title: "Live Trading Sessions",
     body: "Real-time live trading with pex.",
   },
   {
-    icon: <Trophy className="size-4" />,
+    icon: <Trophy className="size-5" />,
     title: "PEX Seven Figure Scaling Plan",
     body: "Access to pex scaling plan.",
   },
   {
-    icon: <LineChart className="size-4" />,
+    icon: <LineChart className="size-5" />,
     title: "MTA Trading Journal",
     body: "Track, review, and improve every trade you take.",
   },
   {
-    icon: <ShieldCheck className="size-4" />,
+    icon: <ShieldCheck className="size-5" />,
     title: "Free 1-month VIP Signal",
     body: "Access to free VIP signals.",
   },
@@ -194,23 +194,23 @@ function Index() {
       <Header />
       <main>
         {/* Hero */}
-        <Section glow="violet" className="pt-14 md:pt-20">
+        <Section glow="violet">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center rounded-full border border-gold/40 bg-gold/10 px-4 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+            <span className="type-meta inline-flex items-center rounded-full border border-gold/40 bg-gold/10 px-4 py-1 uppercase tracking-[0.22em] text-gold">
               With Over 300+ Funded Students
             </span>
-            <h1 className="mt-6 text-4xl font-bold leading-[1.08] text-foreground sm:text-5xl md:text-6xl">
+            <h1 className="type-h1 mt-6 text-foreground">
               Learn The Exact System That Got Over 300 Traders Funded
             </h1>
-            <p className="mx-auto mt-5 max-w-2xl text-sm text-muted-foreground sm:text-base">
+            <p className="type-body mx-auto mt-6 max-w-2xl text-muted-foreground">
               In 90 days you will learn the exact system required by propfirms, to pass,
               get payouts and become consistently profitable as a funded trader.
             </p>
           </div>
-          <HeroVideo className="mx-auto mt-10 max-w-3xl" />
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <HeroVideo className="mx-auto mt-8 max-w-3xl" />
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <GoldButton>Get The Pex System</GoldButton>
-            <OutlineButton href="#pricing">See How It Works</OutlineButton>
+            <OutlineButton href="#how-it-works">See How Traders Get Funded</OutlineButton>
           </div>
         </Section>
 
@@ -225,7 +225,7 @@ function Index() {
         </Section>
 
         {/* How it works */}
-        <Section id="how-it-works" glow="electric">
+        <Section id="how-it-works">
           <SectionHeading
             title="Here's How It Works"
             subtitle="From learning the strategy to getting funded, here's the path."
@@ -235,7 +235,7 @@ function Index() {
               <StepCard key={s.step} {...s} />
             ))}
           </div>
-          <div className="mt-10 text-center">
+          <div className="mt-8 text-center">
             <GoldButton>Start Learning The System</GoldButton>
           </div>
         </Section>
@@ -244,23 +244,23 @@ function Index() {
         <Section id="included">
           <SectionHeading
             title="What's Included?"
-            subtitle="Everything you get in the PEX system + bonus products."
+            subtitle="Everything inside the PEX system, plus the bonus tools students use to stay funded."
           />
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map((f) => (
               <FeatureCard key={f.title} {...f} />
             ))}
           </div>
-          <div className="mt-10 text-center">
+          <div className="mt-8 text-center">
             <GoldButton>Get The Pex System</GoldButton>
           </div>
         </Section>
 
         {/* Trader spotlight */}
-        <Section glow="violet">
+        <Section>
           <SectionHeading
             title="Trader Spotlight"
-            subtitle="Meet a few of our funded traders."
+            subtitle="A few of the traders now collecting payouts with the PEX system."
           />
           <div className="flex flex-wrap items-start justify-center gap-6">
             {SPOTLIGHT.map((person) => (
@@ -271,14 +271,14 @@ function Index() {
 
         {/* Split section */}
         <Section>
-          <Card className="grid items-center gap-8 p-6 md:grid-cols-2 md:p-10">
+          <Card className="grid items-center gap-8 p-6 md:grid-cols-2 md:p-8">
             <div>
-              <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
+              <h2 className="type-h2 text-foreground">
                 Everything You Need To Get Funded, In One Place
               </h2>
-              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-                The PEX strategy, the journal, live signals, and a like-minded private
-                student community.
+              <p className="type-body mt-4 text-muted-foreground">
+                The PEX strategy, the MTA journal, live VIP signals, and a private student
+                community of traders chasing the same prop firm payouts.
               </p>
               <GoldButton className="mt-6">Join The Family</GoldButton>
             </div>
@@ -292,10 +292,10 @@ function Index() {
         </Section>
 
         {/* FAQ */}
-        <Section id="faq" glow="electric">
+        <Section id="faq">
           <SectionHeading
             title="Your Questions, Answered"
-            subtitle="Everything you need to know about The Pex System."
+            subtitle="How the PEX system, the journal, the signals and the mentorship work."
           />
           <div className="mx-auto max-w-3xl">
             <Accordion type="single" collapsible className="space-y-3">
@@ -303,12 +303,12 @@ function Index() {
                 <AccordionItem
                   key={item.q}
                   value={`item-${i}`}
-                  className="rounded-xl border border-border bg-card px-5 shadow-card"
+                  className="rounded-xl border border-border bg-card px-6 shadow-card"
                 >
-                  <AccordionTrigger className="text-left text-sm font-semibold text-foreground hover:no-underline">
+                  <AccordionTrigger className="type-h3 text-left text-foreground hover:no-underline">
                     {item.q}
                   </AccordionTrigger>
-                  <AccordionContent className="text-sm leading-relaxed text-muted-foreground">
+                  <AccordionContent className="type-body text-muted-foreground">
                     {item.a}
                   </AccordionContent>
                 </AccordionItem>
@@ -321,21 +321,19 @@ function Index() {
         <Section id="reviews">
           <SectionHeading
             title="See The Reviews"
-            subtitle="Real feedback from students who've gone through The Pex System."
+            subtitle="Payout screenshots and messages from students running the PEX strategy."
           />
           <ReviewGrid images={REVIEW_IMAGES} />
         </Section>
 
         {/* CTA banner */}
         <Section glow="violet">
-          <Card className="flex flex-col items-start justify-between gap-6 border-border/80 p-8 md:flex-row md:items-center md:p-10">
+          <Card className="flex flex-col items-start justify-between gap-6 p-6 md:flex-row md:items-center md:p-8">
             <div>
-              <h2 className="text-2xl font-bold text-foreground sm:text-3xl">
-                The Choice Is Simple
-              </h2>
-              <p className="mt-3 max-w-xl text-sm text-muted-foreground">
-                Keep trading without a system, or learn the system that's gotten 300+
-                traders funded.
+              <h2 className="type-h2 text-foreground">The Choice Is Simple</h2>
+              <p className="type-body mt-4 max-w-xl text-muted-foreground">
+                Keep guessing on evaluation accounts, or trade the PEX system that has
+                already taken 300+ students to funded accounts and payouts.
               </p>
             </div>
             <GoldButton className="shrink-0">Get The Pex System</GoldButton>
@@ -343,7 +341,7 @@ function Index() {
         </Section>
 
         {/* Pricing */}
-        <Section id="pricing" glow="electric">
+        <Section id="pricing">
           <SectionHeading
             title="Choose Your Plan"
             subtitle="Each program gives access to the exact system designed to get you consistently profitable with propfirms."
@@ -353,7 +351,7 @@ function Index() {
               name="The Pex System"
               price="$149"
               cadence="/month"
-              blurb="Learn the full strategy and get the tools to apply it."
+              blurb="Learn the full PEX strategy and get the tools to trade it on a funded account."
               cta="Get Started"
               onCtaClick={() => openPayment(PRICING_PLANS[0]!)}
               features={[
