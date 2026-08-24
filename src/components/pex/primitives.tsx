@@ -1,6 +1,10 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
+/**
+ * Every section uses the same vertical rhythm: 48px mobile / 64px desktop.
+ * Glow is opt-in and used sparingly — at most one glowing section per viewport.
+ */
 export function Section({
   id,
   glow,
@@ -16,7 +20,7 @@ export function Section({
     <section
       id={id}
       className={cn(
-        "relative overflow-hidden px-5 py-16 sm:px-8 md:py-24",
+        "relative overflow-hidden px-4 py-12 sm:px-8 md:py-16",
         glow === "violet" && "glow-violet",
         glow === "electric" && "glow-electric",
         className,
@@ -37,15 +41,13 @@ export function SectionHeading({
   subtitle?: string;
 }) {
   return (
-    <header className="mx-auto mb-10 max-w-2xl text-center">
+    <header className="mx-auto mb-8 max-w-2xl text-center">
       {eyebrow ? (
-        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-gold">
-          {eyebrow}
-        </p>
+        <p className="type-meta mb-2 uppercase tracking-[0.22em] text-gold">{eyebrow}</p>
       ) : null}
-      <h2 className="text-3xl font-bold text-foreground sm:text-4xl">{title}</h2>
+      <h2 className="type-h2 text-foreground">{title}</h2>
       {subtitle ? (
-        <p className="mt-3 text-sm text-muted-foreground sm:text-base">{subtitle}</p>
+        <p className="type-body mt-4 text-muted-foreground">{subtitle}</p>
       ) : null}
     </header>
   );
@@ -53,15 +55,19 @@ export function SectionHeading({
 
 export function Card({
   className,
+  interactive = false,
   children,
 }: {
   className?: string;
+  /** Only interactive cards get a hover lift. */
+  interactive?: boolean;
   children: ReactNode;
 }) {
   return (
     <div
       className={cn(
         "rounded-xl border border-border bg-card p-6 shadow-card",
+        interactive && "card-lift",
         className,
       )}
     >
@@ -70,34 +76,8 @@ export function Card({
   );
 }
 
-/** Intentionally empty media slot (no images used on this page). */
-export function MediaSlot({
-  label,
-  className,
-  rounded = "rounded-xl",
-}: {
-  label?: string | undefined;
-  className?: string | undefined;
-  rounded?: string;
-}) {
-  return (
-    <div
-      role="img"
-      aria-label={label ?? "Media placeholder"}
-      className={cn(
-        "media-slot flex items-center justify-center",
-        rounded,
-        className,
-      )}
-    >
-      {label ? (
-        <span className="px-3 text-center text-[11px] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-          {label}
-        </span>
-      ) : null}
-    </div>
-  );
-}
+const goldBtn =
+  "btn-press inline-flex items-center justify-center rounded-full bg-gold px-6 py-3 text-[15px] font-semibold text-gold-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring";
 
 export function GoldButton({
   children,
@@ -109,13 +89,7 @@ export function GoldButton({
   href?: string;
 }) {
   return (
-    <a
-      href={href}
-      className={cn(
-        "inline-flex items-center justify-center rounded-full bg-gold px-7 py-3 text-sm font-semibold text-gold-foreground shadow-gold transition-transform hover:scale-[1.03] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
-        className,
-      )}
-    >
+    <a href={href} className={cn(goldBtn, className)}>
       {children}
     </a>
   );
@@ -134,7 +108,7 @@ export function OutlineButton({
     <a
       href={href}
       className={cn(
-        "inline-flex items-center justify-center rounded-full border border-foreground/40 bg-transparent px-7 py-3 text-sm font-semibold text-foreground transition-colors hover:bg-accent",
+        "btn-press-light inline-flex items-center justify-center rounded-full border border-foreground/40 bg-transparent px-6 py-3 text-[15px] font-semibold text-foreground",
         className,
       )}
     >
