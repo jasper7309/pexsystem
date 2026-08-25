@@ -146,11 +146,11 @@ const SPOTLIGHT = ["Tobi", "Amara", "Sam", "Zainab", "Chidi", "Lola"].map(
 const FAQ = [
   {
     q: "What is The Pex System?",
-    a: "",
+    a: "This is a system designed to help traders pass prop firms with a proven framework, get funded, and achieve consistent payouts with prop firms",
   },
   {
     q: "Who is The Pex System for?",
-    a: "The Pex System is designed for struggling traders who find it difficult to pass propfirms or get consistent payouts from propfirms.",
+    a: "The Pex System is designed for struggling traders who find it difficult to pass prop firms or get consistent payouts from prop firms.",
   },
   {
     q: "Do I need prior trading experience to join?",
@@ -170,11 +170,15 @@ const FAQ = [
   },
   {
     q: "What's included in the private community?",
-    a: "Our community consists of like-minded traders working together to achieve a common trading goal, live trading and Q&A sessions.",
+    a: "Our community consists of like-minded traders working together to achieve a common trading goal, live trading and Q&A seesions.",
   },
   {
     q: "How is the Exclusive Mentorship different from The Pex System plan?",
-    a: "The exclusive mentorship plan offers you direct access to one-on-one live trading, classes, and Q&A sessions with PEX himself, while the Pex System Plan is a general mentorship program which involves group mentorship, live trading classes, and Q&A sessions with Pex",
+    a: "The exclusive mentorship offers you direct access to one-on-one live trading, classes, and Q&A sessions with Pex himself, while the Pex System plan is a group mentorship program which involves group mentorship, live trading classes and Q&A sessions with Pex.",
+  },
+  {
+    q: "Who is the exclusive mentorship for:",
+    a: "The exclusive mentorship is meant for people who would like to get funded, but have a tight schedule for live classes, Q&A sessions, and trading",
   },
 ];
 
