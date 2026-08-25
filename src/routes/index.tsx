@@ -372,7 +372,6 @@ function Index() {
               blurb="Everything in The Pex System, plus direct 1-on-1 mentorship from Pex."
               cta="Get Started"
               onCtaClick={() => openPayment(PRICING_PLANS[1]!)}
-              featured
               features={[
                 "Everything in The Pex System",
                 "2 Live Trading Sessions With Pex 1 Hour Each",
