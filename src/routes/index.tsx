@@ -78,19 +78,19 @@ const STEPS = [
   {
     step: "1",
     title: "\u00a0The Pex System",
-    body: "learn the exact framework behind passing a prop firm, getting funded and getting consistent payout",
+    body: "Learn the exact framework behind passing a prop firm, getting funded, and getting consistent payouts",
     media: <StepImage src={PEX_SYSTEM_IMAGE} alt="The Pex System program" />,
   },
   {
     step: "2",
     title: "Join the Private\u00a0Student\u00a0\nCommunity",
-    body: "you get access to like minded traders as yourself who are ready to learn and become consistently profitable",
+    body: "You get access to like-minded traders like yourself who are ready to learn and become consistently profitable",
     media: <StepImage src={TELEGRAM_IMAGE} alt="Private student community on Telegram" />,
   },
   {
     step: "3",
     title: "Get Funded In 90 Days",
-    body: "this program is designed to help you achieve profitability with prop firms in 90 days",
+    body: "This program is designed to help you achieve profitability with prop firms in 90 days",
     media: (
       <RandomSlideshow
         images={FUNDED_COLLAGE}
