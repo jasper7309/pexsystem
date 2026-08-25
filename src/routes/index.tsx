@@ -276,8 +276,7 @@ function Index() {
                 Everything You Need To Get Funded, All In One Program
               </h2>
               <p className="type-body mt-4 text-muted-foreground">
-                The PEX strategy, the MTA journal, live VIP signals, and a private student
-                community of traders chasing the same prop firm payouts.
+                The Pex Strategy, The Trading Journal, VIP Signals, and a Private Student Community
               </p>
               <GoldButton className="mt-6">Join The Family</GoldButton>
             </div>
