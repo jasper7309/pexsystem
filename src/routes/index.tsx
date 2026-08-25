@@ -235,7 +235,7 @@ function Index() {
             ))}
           </div>
           <div className="mt-8 text-center">
-            <GoldButton>Start Learning The System</GoldButton>
+            <GoldButton>Start Learning </GoldButton>
           </div>
         </Section>
 
