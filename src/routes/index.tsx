@@ -90,7 +90,7 @@ const STEPS = [
   {
     step: "3",
     title: "Get Funded In 90 Days",
-    body: "this program to help you achieve profitability with prop firms in 90 days",
+    body: "this program is designed to help you achieve profitability with prop firms in 90 days",
     media: (
       <RandomSlideshow
         images={FUNDED_COLLAGE}
