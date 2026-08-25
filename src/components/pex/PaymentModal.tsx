@@ -72,7 +72,7 @@ function ModalShell({
         onClick={onClose}
         className="absolute inset-0 bg-background/80 backdrop-blur-sm"
       />
-      <div className="glow-violet relative w-full max-w-md overflow-hidden rounded-xl border border-border bg-card p-6 shadow-card animate-in fade-in zoom-in-95 duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]">
+      <div className="glow-violet relative w-full max-w-md overflow-hidden rounded-xl border border-border bg-card p-4 shadow-card animate-in fade-in zoom-in-95 duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] sm:p-6 max-h-[90dvh] overflow-y-auto">
         <div className="flex items-start justify-between gap-4">
           <div className="min-w-0">
             <p className="type-meta uppercase tracking-[0.22em] text-gold">
@@ -348,28 +348,28 @@ export function CryptoPaymentModal({
       title="Pay with crypto"
       headerAction={<CoinToggle coin={coin} onChange={setCoin} />}
     >
-      <div className="mt-6 space-y-5">
-        <div className="grid grid-cols-2 gap-3">
-          <div className="rounded-xl border border-border bg-accent/40 p-3">
+      <div className="mt-4 space-y-3 sm:mt-6 sm:space-y-5">
+        <div className="grid grid-cols-2 gap-2 sm:gap-3">
+          <div className="rounded-xl border border-border bg-accent/40 p-2 sm:p-3">
             <p className="type-meta text-muted-foreground">Price</p>
             <p className="type-h3 mt-1 text-foreground">
               {plan.price}
               {plan.cadence}
             </p>
           </div>
-          <div className="rounded-xl border border-border bg-accent/40 p-3">
+          <div className="rounded-xl border border-border bg-accent/40 p-2 sm:p-3">
             <p className="type-meta text-muted-foreground">Coin</p>
             <p className="type-h3 mt-1 text-foreground">{details.coin}</p>
           </div>
           {details.network ? (
-            <div className="col-span-2 rounded-xl border border-border bg-accent/40 p-3">
+            <div className="col-span-2 rounded-xl border border-border bg-accent/40 p-2 sm:p-3">
               <p className="type-meta text-muted-foreground">Network</p>
               <p className="type-h3 mt-1 text-foreground">{details.network}</p>
             </div>
           ) : null}
         </div>
 
-        <div className="rounded-xl border border-border bg-accent/40 p-4">
+        <div className="rounded-xl border border-border bg-accent/40 p-3 sm:p-4">
           <p className="type-meta text-muted-foreground">Wallet address</p>
           <div className="mt-2 flex items-center justify-between gap-3">
             <p className="type-meta break-all text-foreground">{details.address}</p>
@@ -377,7 +377,7 @@ export function CryptoPaymentModal({
           </div>
         </div>
 
-        <div className="mx-auto aspect-square w-full max-w-[220px] overflow-hidden rounded-xl bg-surface-light p-3 shadow-card">
+        <div className="mx-auto aspect-square w-full max-w-[150px] overflow-hidden rounded-xl bg-surface-light p-2 shadow-card sm:max-w-[220px] sm:p-3">
           <SkeletonImage
             key={details.qr}
             src={details.qr}
@@ -404,7 +404,7 @@ export function CryptoPaymentModal({
           href="https://wa.me/2348151719335"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex w-full items-center justify-center gap-2 btn-press rounded-full bg-gold px-6 py-3.5 text-[15px] font-semibold text-gold-foreground"
+          className="flex w-full items-center justify-center gap-2 btn-press rounded-full bg-gold px-6 py-3 text-[15px] font-semibold text-gold-foreground sm:py-3.5"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
