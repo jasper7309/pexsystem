@@ -388,7 +388,7 @@ export function CryptoPaymentModal({
         </div>
 
         <p className="type-meta text-center text-muted-foreground">
-          After sending payment, please send your receipt to our WhatsApp number:{" "}
+          After sending payment, please send your receipt to our admin on WhatsApp:{" "}
           <a
             href="https://wa.me/2348151719335"
             target="_blank"
