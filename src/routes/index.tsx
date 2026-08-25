@@ -139,9 +139,14 @@ const TESTIMONIALS = TESTIMONIAL_VIDEOS.map((video, i) => ({
   ...video,
 }));
 
-const SPOTLIGHT = ["Tobi", "Amara", "Sam", "Zainab", "Chidi", "Lola"].map(
-  (name, i) => ({ name, src: SPOTLIGHT_IMAGES[i]! }),
-);
+const SPOTLIGHT = [
+  { name: "Charles Okoye", src: SPOTLIGHT_IMAGES[4]! },
+  { name: "Alexander Thomas", src: SPOTLIGHT_IMAGES[1]! },
+  { name: "Goodluck Okonye", src: SPOTLIGHT_IMAGES[2]! },
+  { name: "Daniel Mathew", src: SPOTLIGHT_IMAGES[3]! },
+  { name: "Aloh Ndubuisi", src: SPOTLIGHT_IMAGES[0]! },
+  { name: "Innocent Chiemerie", src: SPOTLIGHT_IMAGES[5]! },
+];
 
 const FAQ = [
   {
