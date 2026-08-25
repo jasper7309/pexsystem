@@ -52,21 +52,23 @@ export const SPOTLIGHT_IMAGES = [
 ];
 
 export const REVIEW_IMAGES = [
+  // Priority images — top
   `${CLOUD}/v1786231338/photo_2026-08-08_18-27-42_tpdcgo.jpg`,
-  `${CLOUD}/v1786231338/photo_2026-08-08_18-27-46_fgp9oo.jpg`,
-  `${CLOUD}/v1786231338/photo_2026-08-08_18-27-50_aag9v2.jpg`,
   `${CLOUD}/v1786231337/photo_2026-08-08_18-27-59_t5lupt.jpg`,
-  `${CLOUD}/v1786231337/photo_2026-08-08_18-27-54_x7bwro.jpg`,
   `${CLOUD}/v1786231337/photo_2026-08-08_18-28-30_exnoa2.jpg`,
   `${CLOUD}/v1786231337/photo_2026-08-08_18-27-17_u2o6wr.jpg`,
   `${CLOUD}/v1786231337/photo_2026-08-08_18-28-26_wuwwyg.jpg`,
-  `${CLOUD}/v1786231337/photo_2026-08-08_18-28-14_prufdk.jpg`,
   `${CLOUD}/v1786231337/photo_2026-08-08_18-28-22_wuawv8.jpg`,
+  `${CLOUD}/v1786231336/photo_2026-08-08_18-28-18_qa17fk.jpg`,
+  `${CLOUD}/v1786231336/photo_2026-08-08_18-27-37_tulkew.jpg`,
+  // Remaining images
+  `${CLOUD}/v1786231338/photo_2026-08-08_18-27-46_fgp9oo.jpg`,
+  `${CLOUD}/v1786231338/photo_2026-08-08_18-27-50_aag9v2.jpg`,
+  `${CLOUD}/v1786231337/photo_2026-08-08_18-27-54_x7bwro.jpg`,
+  `${CLOUD}/v1786231337/photo_2026-08-08_18-28-14_prufdk.jpg`,
   `${CLOUD}/v1786231337/photo_2026-08-08_18-28-09_shi2yh.jpg`,
   `${CLOUD}/v1786231336/photo_2026-08-08_18-27-23_vp9lh2.jpg`,
-  `${CLOUD}/v1786231336/photo_2026-08-08_18-28-18_qa17fk.jpg`,
   `${CLOUD}/v1786231336/photo_2026-08-08_18-27-27_cechle.jpg`,
-  `${CLOUD}/v1786231336/photo_2026-08-08_18-27-37_tulkew.jpg`,
   `${CLOUD}/v1786231336/photo_2026-08-08_18-27-31_zfcavr.jpg`,
   `${CLOUD}/v1786231336/photo_2026-08-08_18-28-37_zt37lv.jpg`,
   `${CLOUD}/v1786231336/photo_2026-08-08_18-28-34_slsm0m.jpg`,
