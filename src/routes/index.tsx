@@ -356,11 +356,13 @@ function Index() {
               blurb="Learn the full System + bonus products."
               cta="Get Started"
               onCtaClick={() => openPayment(PRICING_PLANS[0]!)}
+              featured
               features={[
                 "The Pex System",
                 "MTA Trading Journal access",
                 "Private Student Community",
                 "VIP Signals",
+                "Pex 7-Figure Scaling Plan",
               ]}
             />
             <PricingCard
