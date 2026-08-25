@@ -137,7 +137,7 @@ const FEATURES = [
 ];
 
 const TESTIMONIAL_DATA = [
-  { name: "$30k Funded", result: "Charles Okoye" },
+  { name: "$30k Funded Trader", result: "Charles Okoye" },
   { name: "Profitable Trader", result: "Goodluck Okonye" },
   { name: "Profitable Trader", result: "Lovelyn" },
   { name: "Profitable Trader", result: "Alexander Thomas" },
