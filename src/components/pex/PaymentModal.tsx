@@ -121,15 +121,25 @@ export function PaymentMethodModal({
         payment clears.
       </p>
       <div className="mt-6 space-y-3">
-        <a
-          href={plan.checkoutUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={onClose}
-          className={cn(btn, "btn-press bg-gold text-gold-foreground")}
-        >
-          Pay with Card / Bank Transfer
-        </a>
+        {plan.bankTransfer ? (
+          <button
+            type="button"
+            onClick={onBankTransfer}
+            className={cn(btn, "btn-press bg-gold text-gold-foreground")}
+          >
+            Pay With Bank Transfer
+          </button>
+        ) : (
+          <a
+            href={plan.checkoutUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={onClose}
+            className={cn(btn, "btn-press bg-gold text-gold-foreground")}
+          >
+            Pay with Card / Bank Transfer
+          </a>
+        )}
         <button
           type="button"
           onClick={onCrypto}
