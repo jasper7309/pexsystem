@@ -136,9 +136,16 @@ const FEATURES = [
   },
 ];
 
+const TESTIMONIAL_DATA = [
+  { name: "$30k Funded", result: "Charles Okoye" },
+  { name: "Profitable Trader", result: "Goodluck Okonye" },
+  { name: "Profitable Trader", result: "Lovelyn" },
+  { name: "Profitable Trader", result: "Alexander Thomas" },
+];
+
 const TESTIMONIALS = TESTIMONIAL_VIDEOS.map((video, i) => ({
-  name: `Funded Student ${i + 1}`,
-  result: "@student_handle",
+  name: TESTIMONIAL_DATA[i]?.name ?? `Funded Student ${i + 1}`,
+  result: TESTIMONIAL_DATA[i]?.result ?? "@student_handle",
   ...video,
 }));
 

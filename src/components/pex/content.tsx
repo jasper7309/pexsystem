@@ -7,22 +7,26 @@ export const TELEGRAM_IMAGE =
 export const TESTIMONIAL_VIDEOS: {
   src: string;
   kind: "youtube" | "mp4";
+  profilePic?: string;
 }[] = [
   {
-    src: "https://www.youtube-nocookie.com/embed/G-fGn0T1Z0c?playsinline=1&rel=0",
+    src: "https://www.youtube-nocookie.com/embed/XR9piFSiBs4?playsinline=1&rel=0",
     kind: "youtube",
+    profilePic: "https://res.cloudinary.com/dgxsyq2tf/image/upload/v1787351221/photo_2026-08-21_23-09-43_fc4ypl.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dgxsyq2tf/video/upload/v1787167598/testimonial1_rgdsup.mp4",
+    src: "https://res.cloudinary.com/dgxsyq2tf/video/upload/v1764683056/IMG_1266_egoavo.mov",
     kind: "mp4",
+    profilePic: "https://res.cloudinary.com/dgxsyq2tf/image/upload/v1787351244/showcase8_soxajc.jpg",
+  },
+  {
+    src: "https://www.youtube-nocookie.com/embed/yMpEChor6G0?playsinline=1&rel=0",
+    kind: "youtube",
   },
   {
     src: "https://res.cloudinary.com/dgxsyq2tf/video/upload/v1787167616/testimonial2_ilfpux.mp4",
     kind: "mp4",
-  },
-  {
-    src: "https://www.youtube-nocookie.com/embed/G-fGn0T1Z0c?playsinline=1&rel=0",
-    kind: "youtube",
+    profilePic: "https://res.cloudinary.com/dgxsyq2tf/image/upload/v1787230586/showcase6_b8s5oe.jpg",
   },
 ];
 

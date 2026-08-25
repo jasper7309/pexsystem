@@ -74,20 +74,31 @@ export function TestimonialCard({
   result,
   src,
   kind,
+  profilePic,
 }: {
   name: string;
   result: string;
   src: string;
   kind: "youtube" | "mp4";
+  profilePic?: string;
 }) {
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-surface-light p-4 shadow-card">
       <InlineVideo src={src} kind={kind} />
       <div className="flex items-center gap-4 pt-4">
-        <div
-          className="size-8 rounded-full border border-border bg-muted"
-          aria-hidden
-        />
+        {profilePic ? (
+          <img
+            src={profilePic}
+            alt={result}
+            loading="lazy"
+            className="size-8 rounded-full border border-border object-cover"
+          />
+        ) : (
+          <div
+            className="size-8 rounded-full border border-border bg-muted"
+            aria-hidden
+          />
+        )}
         <div>
           <h3 className="type-h3 text-surface-light-foreground">{name}</h3>
           <p className="type-meta text-surface-light-foreground/70">{result}</p>
