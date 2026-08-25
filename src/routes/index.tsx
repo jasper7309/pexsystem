@@ -162,7 +162,7 @@ const FAQ = [
   },
   {
     q: "Do I need prior trading experience to join?",
-    a: "If you are new to prop firms or have some level of experience with prop firms this program is designed for you",
+    a: "If you are new to prop firms or have some level of experience with prop firms, but keep failing this program is designed for you",
   },
   {
     q: "What is the MTA Trading Journal?",
@@ -174,7 +174,7 @@ const FAQ = [
   },
   {
     q: "Will this help me pass a funding challenge?",
-    a: "Yes, that is the goal of the PEX system.",
+    a: "Yes, that is the goal of the Pex System.",
   },
   {
     q: "What's included in the private community?",
@@ -271,7 +271,7 @@ function Index() {
         <Section>
           <SectionHeading
             title="Trader Spotlight"
-            subtitle="A few of the traders now collecting payouts with the PEX system."
+            subtitle="Meet a few of our funded traders"
           />
           <div className="flex flex-wrap items-start justify-center gap-6">
             {SPOTLIGHT.map((person) => (
@@ -305,7 +305,7 @@ function Index() {
         <Section id="faq">
           <SectionHeading
             title="FAQs"
-            subtitle="How the PEX system, the journal, the signals and the mentorship work."
+            subtitle="How the Pex System, the journal, the signals and the mentorship work."
           />
           <div className="mx-auto max-w-3xl">
             <Accordion type="single" collapsible className="space-y-3">
@@ -331,7 +331,7 @@ function Index() {
         <Section id="reviews">
           <SectionHeading
             title="Traders Results"
-            subtitle="Results from students who got funded\u00a0"
+            subtitle="Results from students who got funded"
           />
           <ReviewGrid images={REVIEW_IMAGES} />
         </Section>
@@ -383,7 +383,7 @@ function Index() {
               features={[
                 "Everything in The Pex System",
                 "2 Live Trading Sessions With Pex 1 Hour Each",
-                "Access to Pex 7-Figure Scale-Up Plan",
+                "Access to The Pex 7-Figure Scaling Plan",
                 "How to Get Private Investors",
               ]}
             />
