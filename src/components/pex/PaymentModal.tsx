@@ -105,10 +105,12 @@ export function PaymentMethodModal({
   plan,
   onClose,
   onCrypto,
+  onBankTransfer,
 }: {
   plan: Plan;
   onClose: () => void;
   onCrypto: () => void;
+  onBankTransfer: () => void;
 }) {
   const btn =
     "flex w-full items-center justify-center rounded-full px-6 py-4 text-[15px] font-semibold";
