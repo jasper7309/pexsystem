@@ -37,6 +37,7 @@ import {
   TESTIMONIAL_VIDEOS,
 } from "@/components/pex/content";
 import {
+  BankTransferModal,
   CryptoPaymentModal,
   PaymentMethodModal,
   PRICING_PLANS,
@@ -125,11 +126,13 @@ const FEATURES = [
     icon: <LineChart className="size-5" />,
     title: "MTA Trading Journal",
     body: "A free bonus journal, to help track, review and improve every trading decision you make",
+    bonus: true,
   },
   {
     icon: <ShieldCheck className="size-5" />,
     title: "Free 1-month VIP Signal",
     body: "you get access to the pex vip signal for a month totally free",
+    bonus: true,
   },
 ];
 
@@ -190,7 +193,7 @@ const FAQ = [
 
 function Index() {
   const [plan, setPlan] = useState<Plan | null>(null);
-  const [step, setStep] = useState<"method" | "crypto" | null>(null);
+  const [step, setStep] = useState<"method" | "crypto" | "bank" | null>(null);
 
   const openPayment = (p: Plan) => {
     setPlan(p);
@@ -209,7 +212,7 @@ function Index() {
               With Over 300+ Funded Students
             </span>
             <h1 className="type-h1 mt-6 text-foreground">
-              Learn The Exact System That Got Over 300+ Traders Funded
+              Learn The Exact <span className="text-gold">System</span> That Got Over 300+ Traders Funded
             </h1>
             <p className="type-body mx-auto mt-6 max-w-2xl text-muted-foreground">
               In 90 days you will learn the exact system required by prop firms, to pass get payouts and become consistently profitable as a funded trader.
@@ -225,7 +228,7 @@ function Index() {
         {/* Success stories */}
         <Section>
           <SectionHeading eyebrow="300+ Funded Students" title="Success Stories" />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2">
             {TESTIMONIALS.map((t) => (
               <TestimonialCard key={t.name} {...t} />
             ))}
@@ -339,8 +342,7 @@ function Index() {
             <div>
               <h2 className="type-h2 text-foreground">The Choice Is Simple</h2>
               <p className="type-body mt-4 max-w-xl text-muted-foreground">
-                Keep guessing on evaluation accounts, or trade the PEX system that has
-                already taken 300+ students to funded accounts and payouts.
+                Keep trading without a system, or learn the system that's gotten 300+ traders funded.
               </p>
             </div>
             <GoldButton className="shrink-0">Get The Pex System</GoldButton>
@@ -353,11 +355,12 @@ function Index() {
             title="Choose Your Plan"
             subtitle="Each program gives you the exact system designed to get you consistently profitable with propfirms."
           />
-          <div className="mx-auto grid max-w-3xl gap-6 md:grid-cols-2">
+          <div className="mx-auto grid max-w-5xl gap-6 md:grid-cols-2">
             <PricingCard
               name="The Pex System"
               price="$149"
-              cadence="/month"
+              cadence="/3 months"
+              oldCadence="/month"
               blurb="Learn the full System + bonus products."
               cta="Get Started"
               onCtaClick={() => openPayment(PRICING_PLANS[0]!)}
@@ -393,10 +396,18 @@ function Index() {
           plan={plan}
           onClose={closePayment}
           onCrypto={() => setStep("crypto")}
+          onBankTransfer={() => setStep("bank")}
         />
       ) : null}
       {plan && step === "crypto" ? (
         <CryptoPaymentModal
+          plan={plan}
+          onClose={closePayment}
+          onBack={() => setStep("method")}
+        />
+      ) : null}
+      {plan && step === "bank" ? (
+        <BankTransferModal
           plan={plan}
           onClose={closePayment}
           onBack={() => setStep("method")}

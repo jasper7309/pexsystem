@@ -2,7 +2,7 @@ export const PEX_SYSTEM_IMAGE =
   "https://res.cloudinary.com/dgxsyq2tf/image/upload/v1787168345/PEX_SYSTEM-MAIN_jfdcnt.png";
 
 export const TELEGRAM_IMAGE =
-  "https://res.cloudinary.com/dgxsyq2tf/image/upload/v1787230666/telegram_icon_qhghnu.jpg";
+  "https://res.cloudinary.com/dgxsyq2tf/image/upload/v1787351258/telegramicon_edzjey.jpg";
 
 export const TESTIMONIAL_VIDEOS: {
   src: string;
@@ -19,6 +19,10 @@ export const TESTIMONIAL_VIDEOS: {
   {
     src: "https://res.cloudinary.com/dgxsyq2tf/video/upload/v1787167616/testimonial2_ilfpux.mp4",
     kind: "mp4",
+  },
+  {
+    src: "https://www.youtube-nocookie.com/embed/G-fGn0T1Z0c?playsinline=1&rel=0",
+    kind: "youtube",
   },
 ];
 
@@ -39,11 +43,11 @@ export const FUNDED_COLLAGE = [
 ];
 
 export const SPOTLIGHT_IMAGES = [
-  `${CLOUD}/v1787230586/showcase4_uwqkfo.jpg`,
+  `https://res.cloudinary.com/dgxsyq2tf/image/upload/v1787351244/showcase7_cydkbq.jpg`,
   `${CLOUD}/v1787230586/showcase6_b8s5oe.jpg`,
-  `${CLOUD}/v1787230586/showcase3_bmtcfn.jpg`,
+  `https://res.cloudinary.com/dgxsyq2tf/image/upload/v1787351244/showcase8_soxajc.jpg`,
   `${CLOUD}/v1787230585/showcase1_owggs3.jpg`,
-  `${CLOUD}/v1787230584/showcase2_fkkbga.jpg`,
+  `https://res.cloudinary.com/dgxsyq2tf/image/upload/v1787351221/photo_2026-08-21_23-09-43_fc4ypl.jpg`,
   `${CLOUD}/v1787230586/showcase5_cprelc.jpg`,
 ];
 

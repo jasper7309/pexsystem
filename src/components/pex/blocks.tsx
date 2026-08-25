@@ -36,7 +36,7 @@ export function StepImage({ src, alt }: { src: string; alt: string }) {
         src={src}
         alt={alt}
         loading="lazy"
-        className="size-full object-contain"
+        className="size-full object-cover"
       />
     </div>
   );
@@ -46,13 +46,20 @@ export function FeatureCard({
   icon,
   title,
   body,
+  bonus = false,
 }: {
   icon: ReactNode;
   title: string;
   body: string;
+  bonus?: boolean;
 }) {
   return (
-    <Card>
+    <Card className="relative">
+      {bonus ? (
+        <span className="absolute right-4 top-4 rounded-full border border-gold/30 bg-gold/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.15em] text-gold">
+          Bonus
+        </span>
+      ) : null}
       <div className="flex size-11 items-center justify-center rounded-xl bg-accent text-gold">
         {icon}
       </div>
@@ -110,6 +117,7 @@ export function PricingCard({
   name,
   price,
   cadence,
+  oldCadence,
   blurb,
   features,
   featured = false,
@@ -120,6 +128,8 @@ export function PricingCard({
   name: string;
   price: string;
   cadence: string;
+  /** When provided, renders a struck-through old cadence above the active one. */
+  oldCadence?: string;
   blurb: string;
   features: string[];
   featured?: boolean;
@@ -148,19 +158,38 @@ export function PricingCard({
   };
 
   return (
-    <Card className={cn("flex flex-col", featured && "border-gold/60")}>
+    <Card className={cn("pricing-card-glow relative flex flex-col rounded-3xl px-8 py-7 md:px-10 md:py-8", featured && "border-gold/60")}>
       {featured ? (
-        <p className="type-meta mb-3 uppercase tracking-[0.2em] text-gold">
+        <p className="absolute right-6 top-6 type-meta uppercase tracking-[0.2em] text-gold">
           Most popular
         </p>
       ) : null}
       <h3 className="type-meta uppercase tracking-[0.2em] text-muted-foreground">
         {name}
       </h3>
-      <p className="mt-4 flex items-end gap-1">
-        <span className="type-h2 text-foreground">{price}</span>
-        <span className="type-meta pb-1 text-muted-foreground">{cadence}</span>
-      </p>
+      {oldCadence ? (
+        <div className="mt-4 flex items-center gap-2">
+          <span className="text-[4rem] font-bold leading-none tracking-tight text-foreground">
+            {price}
+          </span>
+          <div className="flex flex-col">
+            <span className="type-meta leading-snug text-muted-foreground/60 line-through decoration-muted-foreground/40">
+              {oldCadence}
+            </span>
+            <div className="my-0.5 h-px w-full bg-border" />
+            <span className="type-meta leading-snug text-muted-foreground">
+              {cadence}
+            </span>
+          </div>
+        </div>
+      ) : (
+        <p className="mt-4 flex items-end gap-1.5">
+          <span className="text-[3.25rem] font-bold leading-none tracking-tight text-foreground">
+            {price}
+          </span>
+          <span className="type-meta pb-1 text-muted-foreground">{cadence}</span>
+        </p>
+      )}
       <p className="type-body mt-2 text-muted-foreground">{blurb}</p>
       {onCtaClick ? (
         <button

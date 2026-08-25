@@ -188,6 +188,34 @@
   }
 }
 
+@utility pricing-card-glow {
+  position: relative;
+  isolation: isolate;
+  box-shadow:
+    0 0 0 1px oklch(0.781 0.155 74 / 0.35),
+    0 0 18px 2px oklch(0.781 0.155 74 / 0.18),
+    0 0 40px 8px oklch(0.781 0.155 74 / 0.08);
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    border-radius: inherit;
+    background:
+      radial-gradient(
+        80% 60% at 50% 110%,
+        oklch(0.781 0.155 74 / 0.12),
+        transparent 70%
+      ),
+      radial-gradient(
+        50% 40% at 50% -10%,
+        oklch(0.781 0.155 74 / 0.07),
+        transparent 70%
+      );
+  }
+}
+
 /* Empty media placeholder — intentionally imageless */
 @utility media-slot {
   background:
