@@ -3,11 +3,19 @@ import { ArrowLeft, Check, Copy, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SkeletonImage } from "./media";
 
+export type BankTransfer = {
+  price: string;
+  bankName: string;
+  accountName: string;
+  accountNumber: string;
+};
+
 export type Plan = {
   name: string;
   price: string;
   cadence: string;
-  checkoutUrl: string;
+  checkoutUrl?: string;
+  bankTransfer?: BankTransfer;
 };
 
 export const PRICING_PLANS: Plan[] = [
@@ -21,7 +29,12 @@ export const PRICING_PLANS: Plan[] = [
     name: "Exclusive Mentorship",
     price: "$249",
     cadence: "/month",
-    checkoutUrl: "https://selar.com/Pex1V1?currency=USD",
+    bankTransfer: {
+      price: "₦249,000",
+      bankName: "KudaBank",
+      accountName: "MULTITECH ACADEMY LIMITED",
+      accountNumber: "3003897385",
+    },
   },
 ];
 
