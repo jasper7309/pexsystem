@@ -76,20 +76,20 @@ export const Route = createFileRoute("/")({
 const STEPS = [
   {
     step: "1",
-    title: "Get The Pex System",
-    body: "Learn the framework behind passing a prop firm, getting a payout, and becoming consistently profitable.",
+    title: "\u00a0The Pex System",
+    body: "learn the exact framework behind passing a prop firm, getting funded and getting consistent payout",
     media: <StepImage src={PEX_SYSTEM_IMAGE} alt="The Pex System program" />,
   },
   {
     step: "2",
-    title: "Join The Student Private Community",
-    body: "Get access to like minded traders as yourself, who is ready to learn and get consistently profitable.",
+    title: "Join the Private\u00a0Student\u00a0\nCommunity",
+    body: "you get access to like minded traders as yourself who are ready to learn and become consistently profitable",
     media: <StepImage src={TELEGRAM_IMAGE} alt="Private student community on Telegram" />,
   },
   {
     step: "3",
     title: "Get Funded In 90 Days",
-    body: "This program is designed to get you funded in 90 days.",
+    body: "this program to help you achieve profitability with prop firms in 90 days",
     media: (
       <RandomSlideshow
         images={FUNDED_COLLAGE}
@@ -104,32 +104,32 @@ const FEATURES = [
   {
     icon: <BookOpen className="size-5" />,
     title: "The Pex System Program",
-    body: "The complete, step-by-step trading program.",
+    body: "a complete step by step system to achieving prop firm profitability",
   },
   {
     icon: <Users className="size-5" />,
     title: "Private Student Community",
-    body: "A community of like-minded traders.",
+    body: "join over 300+ traders to achieve the same goal.",
   },
   {
     icon: <Video className="size-5" />,
     title: "Live Trading Sessions",
-    body: "Real-time live trading with pex.",
+    body: "real time live trading + Q&A sessions with pex",
   },
   {
     icon: <Trophy className="size-5" />,
-    title: "PEX Seven Figure Scaling Plan",
-    body: "Access to pex scaling plan.",
+    title: "Pex 7-Figure Scaling Plan",
+    body: "from $5k to a $100k in funding is possible with this plan",
   },
   {
     icon: <LineChart className="size-5" />,
     title: "MTA Trading Journal",
-    body: "Track, review, and improve every trade you take.",
+    body: "A free bonus journal, to help track, review and improve every trading decision you make",
   },
   {
     icon: <ShieldCheck className="size-5" />,
     title: "Free 1-month VIP Signal",
-    body: "Access to free VIP signals.",
+    body: "you get access to the pex vip signal for a month totally free",
   },
 ];
 
@@ -150,15 +150,15 @@ const FAQ = [
   },
   {
     q: "Who is The Pex System for?",
-    a: "The PEX system is designed for struggling traders who find it difficult to pass evaluations and receive consistent payouts from prop firms.",
+    a: "The Pex System is designed for struggling traders who find it difficult to pass propfirms or get consistent payouts from propfirms.",
   },
   {
     q: "Do I need prior trading experience to join?",
-    a: "No, the PEX system includes everything you need to know.",
+    a: "If you are new to prop firms or have some level of experience with prop firms this program is designed for you",
   },
   {
     q: "What is the MTA Trading Journal?",
-    a: "The MTA trading journal is a tool that helps you track, review, and improve your trading decisions.",
+    a: "The MTA trading is a trading tool that helps you track, review, and improve your trading decisions in order to get better psychology.",
   },
   {
     q: "How do VIP Signals work?",
@@ -170,11 +170,11 @@ const FAQ = [
   },
   {
     q: "What's included in the private community?",
-    a: "Our community consists of like-minded traders working together to achieve a common trading goal: profitability and consistent payouts.",
+    a: "Our community consists of like-minded traders working together to achieve a common trading goal, live trading and Q&A sessions.",
   },
   {
     q: "How is the Exclusive Mentorship different from The Pex System plan?",
-    a: "The exclusive mentorship offers you direct access to one-on-one live trading, classes, and Q&A sessions with PEX himself, while the PEX system plan is a broader form of mentorship that is not as exclusive as the private mentorship.",
+    a: "The exclusive mentorship plan offers you direct access to one-on-one live trading, classes, and Q&A sessions with PEX himself, while the Pex System Plan is a general mentorship program which involves group mentorship, live trading classes, and Q&A sessions with Pex",
   },
 ];
 
@@ -200,11 +200,10 @@ function Index() {
               With Over 300+ Funded Students
             </span>
             <h1 className="type-h1 mt-6 text-foreground">
-              Learn The Exact System That Got Over 300 Traders Funded
+              Learn The Exact System That Got Over 300+ Traders Funded
             </h1>
             <p className="type-body mx-auto mt-6 max-w-2xl text-muted-foreground">
-              In 90 days you will learn the exact system required by propfirms, to pass,
-              get payouts and become consistently profitable as a funded trader.
+              In 90 days you will learn the exact system required by prop firms, to pass get payouts and become consistently profitable as a funded trader.
             </p>
           </div>
           <HeroVideo className="mx-auto mt-8 max-w-3xl" />
@@ -228,7 +227,7 @@ function Index() {
         <Section id="how-it-works">
           <SectionHeading
             title="Here's How It Works"
-            subtitle="From learning the strategy to getting funded, here's the path."
+            subtitle="From learning the system to getting payouts, here's the path."
           />
           <div className="grid gap-6 md:grid-cols-3">
             {STEPS.map((s) => (
@@ -244,7 +243,7 @@ function Index() {
         <Section id="included">
           <SectionHeading
             title="What's Included?"
-            subtitle="Everything inside the PEX system, plus the bonus tools students use to stay funded."
+            subtitle="Everything inside the Pex System, plus the bonus tools students use to stay funded."
           />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {FEATURES.map((f) => (
@@ -274,7 +273,7 @@ function Index() {
           <Card className="grid items-center gap-8 p-6 md:grid-cols-2 md:p-8">
             <div>
               <h2 className="type-h2 text-foreground">
-                Everything You Need To Get Funded, In One Place
+                Everything You Need To Get Funded, All In One Program
               </h2>
               <p className="type-body mt-4 text-muted-foreground">
                 The PEX strategy, the MTA journal, live VIP signals, and a private student
@@ -294,7 +293,7 @@ function Index() {
         {/* FAQ */}
         <Section id="faq">
           <SectionHeading
-            title="Your Questions, Answered"
+            title="FAQs"
             subtitle="How the PEX system, the journal, the signals and the mentorship work."
           />
           <div className="mx-auto max-w-3xl">
@@ -320,8 +319,8 @@ function Index() {
         {/* Reviews */}
         <Section id="reviews">
           <SectionHeading
-            title="See The Reviews"
-            subtitle="Payout screenshots and messages from students running the PEX strategy."
+            title="Traders Results"
+            subtitle="Results from students who got funded\u00a0"
           />
           <ReviewGrid images={REVIEW_IMAGES} />
         </Section>
@@ -344,20 +343,20 @@ function Index() {
         <Section id="pricing">
           <SectionHeading
             title="Choose Your Plan"
-            subtitle="Each program gives access to the exact system designed to get you consistently profitable with propfirms."
+            subtitle="Each program gives you the exact system designed to get you consistently profitable with propfirms."
           />
           <div className="mx-auto grid max-w-3xl gap-6 md:grid-cols-2">
             <PricingCard
               name="The Pex System"
               price="$149"
               cadence="/month"
-              blurb="Learn the full PEX strategy and get the tools to trade it on a funded account."
+              blurb="Learn the full System + bonus products."
               cta="Get Started"
               onCtaClick={() => openPayment(PRICING_PLANS[0]!)}
               features={[
-                "The Pex Strategy course",
+                "The Pex System",
                 "MTA Trading Journal access",
-                "Private Community access",
+                "Private Student Community",
                 "VIP Signals",
               ]}
             />
@@ -372,7 +371,7 @@ function Index() {
               features={[
                 "Everything in The Pex System",
                 "2 Live Trading Sessions With Pex 1 Hour Each",
-                "Access to Pex Seven-Figure Scale-Up Plan",
+                "Access to Pex 7-Figure Scale-Up Plan",
                 "How to Get Private Investors",
               ]}
             />
