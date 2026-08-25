@@ -1,4 +1,3 @@
-import { MessageCircle } from "lucide-react";
 
 export function Footer() {
   return (
