@@ -27,17 +27,6 @@ export function Footer() {
             Student reviews
           </a>
         </nav>
-        <div className="mt-6 flex justify-center">
-          <a
-            href="https://wa.me/2348151719335"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-press-light type-meta inline-flex items-center gap-2 rounded-full border border-border px-4 py-2 text-foreground"
-          >
-            <MessageCircle className="size-4 text-gold" aria-hidden />
-            Message Pex on WhatsApp
-          </a>
-        </div>
         <p className="type-meta mt-6 text-muted-foreground">
           © {new Date().getFullYear()} The Pex System. All rights reserved.
         </p>
