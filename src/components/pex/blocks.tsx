@@ -83,7 +83,7 @@ export function TestimonialCard({
   profilePic?: string;
 }) {
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-surface-light p-4 shadow-card">
+    <div className="overflow-hidden rounded-xl border border-border bg-card p-4 shadow-card">
       <InlineVideo src={src} kind={kind} />
       <div className="flex items-center gap-4 pt-4">
         {profilePic ? (
@@ -100,8 +100,8 @@ export function TestimonialCard({
           />
         )}
         <div>
-          <h3 className="type-h3 text-surface-light-foreground">{name}</h3>
-          <p className="type-meta text-surface-light-foreground/70">{result}</p>
+          <h3 className="type-h3 text-foreground">{name}</h3>
+          <p className="type-meta text-muted-foreground">{result}</p>
         </div>
       </div>
     </div>
