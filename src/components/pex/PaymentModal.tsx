@@ -117,8 +117,7 @@ export function PaymentMethodModal({
   return (
     <ModalShell plan={plan} onClose={onClose} title="Choose payment method">
       <p className="type-body mt-2 text-muted-foreground">
-        Pick how you want to pay and your Pex System access is set up right after
-        payment clears.
+        Select payment method
       </p>
       <div className="mt-6 space-y-3">
         {plan.bankTransfer ? (
