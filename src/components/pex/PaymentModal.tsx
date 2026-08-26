@@ -79,8 +79,7 @@ function ModalShell({
               {title}
             </p>
             <h2 className="type-h2 mt-2 text-foreground">
-              {plan.name}, {plan.price}
-              {plan.cadence}
+              {plan.name}, {plan.price}<span className="text-[0.55em] font-medium text-muted-foreground align-middle">{plan.cadence}</span>
             </h2>
           </div>
           <div className="flex shrink-0 items-center gap-2">
