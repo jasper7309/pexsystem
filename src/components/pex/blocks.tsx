@@ -29,14 +29,14 @@ export function StepCard({
   );
 }
 
-export function StepImage({ src, alt }: { src: string; alt: string }) {
+export function StepImage({ src, alt, contain = false }: { src: string; alt: string; contain?: boolean }) {
   return (
     <div className="flex aspect-[4/3] w-full items-center justify-center overflow-hidden rounded-xl border border-border bg-letterbox">
       <img
         src={src}
         alt={alt}
         loading="lazy"
-        className="size-full object-cover"
+        className={contain ? "size-full object-contain p-4" : "size-full object-cover"}
       />
     </div>
   );
@@ -110,7 +110,7 @@ export function TestimonialCard({
 
 export function AvatarBubble({ name, src }: { name: string; src: string }) {
   return (
-    <figure className="flex w-24 flex-col items-center gap-2">
+    <figure className="flex flex-col items-center gap-2">
       <div className="flex size-20 items-center justify-center overflow-hidden rounded-full border border-border bg-letterbox sm:size-24">
         <img
           src={src}
@@ -119,7 +119,7 @@ export function AvatarBubble({ name, src }: { name: string; src: string }) {
           className="size-full object-contain"
         />
       </div>
-      <figcaption className="type-meta text-muted-foreground">{name}</figcaption>
+      <figcaption className="type-meta whitespace-nowrap text-center text-muted-foreground">{name}</figcaption>
     </figure>
   );
 }

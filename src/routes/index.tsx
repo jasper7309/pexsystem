@@ -85,7 +85,7 @@ const STEPS = [
     step: "2",
     title: "Join the Private\u00a0Student\u00a0\nCommunity",
     body: "You get access to like-minded traders like yourself who are ready to learn and become consistently profitable",
-    media: <StepImage src={TELEGRAM_IMAGE} alt="Private student community on Telegram" />,
+    media: <StepImage src={TELEGRAM_IMAGE} alt="Private student community on Telegram" contain />,
   },
   {
     step: "3",
@@ -138,9 +138,9 @@ const FEATURES = [
 
 const TESTIMONIAL_DATA = [
   { name: "$30k Funded Trader", result: "Charles Okoye" },
-  { name: "Profitable Trader", result: "Goodluck Okonye" },
+  { name: "$10k Funded", result: "Goodluck Okonye" },
   { name: "Profitable Trader", result: "Lovelyn" },
-  { name: "Profitable Trader", result: "Alexander Thomas" },
+  { name: "$5k Funded", result: "Alexander Thomas" },
 ];
 
 const TESTIMONIALS = TESTIMONIAL_VIDEOS.map((video, i) => ({
@@ -280,7 +280,7 @@ function Index() {
             title="Trader Spotlight"
             subtitle="Meet a few of our funded traders"
           />
-          <div className="flex flex-wrap items-start justify-center gap-6">
+          <div className="flex flex-wrap items-start justify-evenly gap-x-8 gap-y-6">
             {SPOTLIGHT.map((person) => (
               <AvatarBubble key={person.name} {...person} />
             ))}

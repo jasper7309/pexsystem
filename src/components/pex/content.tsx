@@ -22,6 +22,7 @@ export const TESTIMONIAL_VIDEOS: {
   {
     src: "https://www.youtube-nocookie.com/embed/yMpEChor6G0?playsinline=1&rel=0",
     kind: "youtube",
+    profilePic: "https://res.cloudinary.com/dgxsyq2tf/image/upload/v1787735793/lovelyn_rxcesr.jpg",
   },
   {
     src: "https://res.cloudinary.com/dgxsyq2tf/video/upload/v1787167616/testimonial2_ilfpux.mp4",

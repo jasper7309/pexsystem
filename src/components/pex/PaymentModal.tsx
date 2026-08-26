@@ -352,8 +352,7 @@ export function CryptoPaymentModal({
           <div className="rounded-xl border border-border bg-accent/40 p-2 sm:p-3">
             <p className="type-meta text-muted-foreground">Price</p>
             <p className="type-h3 mt-1 text-foreground">
-              {plan.price}
-              {plan.cadence}
+              {plan.price}<span className="text-[0.65em] font-medium text-muted-foreground">{plan.cadence}</span>
             </p>
           </div>
           <div className="rounded-xl border border-border bg-accent/40 p-2 sm:p-3">
