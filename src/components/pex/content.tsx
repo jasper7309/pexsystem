@@ -15,8 +15,8 @@ export const TESTIMONIAL_VIDEOS: {
     profilePic: "https://res.cloudinary.com/dgxsyq2tf/image/upload/v1787351221/photo_2026-08-21_23-09-43_fc4ypl.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dgxsyq2tf/video/upload/v1764683056/IMG_1266_egoavo.mov",
-    kind: "mp4",
+    src: "https://www.youtube-nocookie.com/embed/uBE9Ibs4qAY?playsinline=1&rel=0",
+    kind: "youtube",
     profilePic: "https://res.cloudinary.com/dgxsyq2tf/image/upload/v1787351244/showcase8_soxajc.jpg",
   },
   {
@@ -25,8 +25,8 @@ export const TESTIMONIAL_VIDEOS: {
     profilePic: "https://res.cloudinary.com/dgxsyq2tf/image/upload/v1787735793/lovelyn_rxcesr.jpg",
   },
   {
-    src: "https://res.cloudinary.com/dgxsyq2tf/video/upload/v1787167616/testimonial2_ilfpux.mp4",
-    kind: "mp4",
+    src: "https://www.youtube-nocookie.com/embed/DRA2gXCqb2s?playsinline=1&rel=0",
+    kind: "youtube",
     profilePic: "https://res.cloudinary.com/dgxsyq2tf/image/upload/v1787230586/showcase6_b8s5oe.jpg",
   },
 ];
